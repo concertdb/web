@@ -1,13 +1,13 @@
 import template from './hero.html';
 import controller from './hero.controller';
-import './hero.styl';
+import './hero.less';
 
 let heroComponent = {
-  restrict: 'E',
-  bindings: {},
-  template,
-  controller,
-  controllerAs: 'vm'
+    restrict: 'E',
+    bindings: {},
+    template,
+    controller,
+    controllerAs: 'vm'
 };
 
 export default heroComponent;
