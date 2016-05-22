@@ -5,3 +5,8 @@ node_modules
 .settings
 *.log
 dist/
+
+# PROJECT SPECIFIC
+
+### developer workspace
+dev-workspace
