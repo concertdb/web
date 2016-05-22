@@ -1,7 +1,8 @@
 {
-  "name": "ng6-starter",
+  "name": "concertdb-ui",
   "version": "0.0.1",
-  "description": "Starter for Angular + ES6 + (Webpack or JSPM)",
+  "description": "Concert DB. Helping you keep track of your musical identity.",
+  "private": true,
   "main": "index.js",
   "dependencies": {
     "angular": "^1.5.0",
@@ -12,8 +13,8 @@
     "angular-mocks": "^1.5.0",
     "babel-core": "^6.7.7",
     "babel-loader": "^6.2.4",
-    "babel-polyfill": "^6.7.4",
     "babel-plugin-transform-runtime": "^6.7.5",
+    "babel-polyfill": "^6.7.4",
     "babel-preset-es2015": "^6.6.0",
     "babel-preset-stage-0": "^6.5.0",
     "babel-register": "^6.7.2",
@@ -36,6 +37,8 @@
     "karma-mocha-reporter": "^1.0.2",
     "karma-sourcemap-loader": "^0.3.4",
     "karma-webpack": "^1.5.1",
+    "less": "^2.7.1",
+    "less-loader": "^2.2.3",
     "lodash": "^4.11.1",
     "mocha": "^2.3.0",
     "ng-annotate-loader": "0.0.10",
@@ -43,7 +46,6 @@
     "raw-loader": "^0.5.1",
     "run-sequence": "^1.1.0",
     "style-loader": "^0.12.2",
-    "stylus-loader": "^1.1.1",
     "supports-color": "^3.1.2",
     "webpack": "^1.9.5",
     "webpack-dev-middleware": "^1.6.1",
@@ -51,17 +53,25 @@
     "yargs": "^3.9.0"
   },
   "scripts": {
-    "test": "karma start"
+    "test": "karma start",
+    "start": "gulp serve"
   },
   "keywords": [
-    "angular",
-    "webpack",
-    "es6"
+    "concerts",
+    "music",
+    "community"
   ],
   "repository": {
     "type": "git",
     "url": "https://github.com/angularclass/NG6-starter.git"
   },
-  "author": "AngularClass",
+  "author": "Matthew Vilhauer <matthew.vilhauer@gmail.com> (http://github.com/matthewvilhauer)",
+  "contributors": [
+    {
+      "name": "Angelo Cisneros",
+      "email": "a.e.cisneros@gmail.com",
+      "url": "http://github.com/el-besto"
+    }
+  ],
   "license": "Apache-2.0"
 }
