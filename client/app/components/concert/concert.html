@@ -1,0 +1,8 @@
+<div>
+    <h1>{{ vm.name }}</h1>
+</div>
+
+    <h2>Archive Response</h2>
+    <li ng-repeat="file in vm.concert | filter:{'format': 'VBR MP3'}">
+        {{file.title}} - {{file.format}}
+    </li>
