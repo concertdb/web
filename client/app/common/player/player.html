@@ -19,8 +19,10 @@
     <sound-manager></sound-manager>
 
     <p>
-        Currently Playing: {{ currentPlaying.title }} by {{ currentPlaying.artist }} ({{ currentPostion }} / {{ currentDuration }})
+        Currently Playing: {{ currentPlaying.title }} by {{ currentPlaying.creator }} ({{ currentPostion }} / {{ currentDuration }})
     </p>
+
+    <!--<md-progress-linear md-mode="determinate" value="30"></md-progress-linear>-->
 
     <div class="seekBase" seek-track>
         <div class="seekLoad" ng-style="{width : ( progress + '%' ) }"></div>
@@ -64,4 +66,12 @@
             <span ng-if="currentPlaying.id == song.id"> - (current)</span>
         </li>
     </ul>
+
+    <hr>
+
+    <h2>Archive Response</h2>
+
+    <span>
+        {{vm.archive}}
+    </span>
 </div>

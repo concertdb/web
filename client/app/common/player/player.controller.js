@@ -5,13 +5,13 @@ class PlayerController {
 
         this.http = $http;
 
-        // this.http = $http;
         this.name = 'player';
         this.songs = this.getSongs();
+        this.archive = this.getArchive();
     };
 
     getSongs(){
-        // let concertUrl = 'http://archive.org/details/sci2004-06-19.flac16?output=json';
+
         return [
             {
                 id: '1',
@@ -55,17 +55,40 @@ class PlayerController {
             }
         ];
 
-        // let concertUrl = 'http://localhost:8000/v1/concerts';
-        // this.http({
-        //     method: 'GET',
-        //     url: concertUrl,
-        //     withCredentials: true,
-        //     headers: {
-        //         'Access-Control-Allow-Origin': window.location.origin,
-        //         'Cache-Control': ['no-cache', 'max-age=0', 'must-revalidate', 'no-store']
-        //     }
-        // }).then(function(data){},function(err){});
+    }
+
+    // getArchive(){
+    //
+    //     var concertUrl = 'http://archive.org/details/sci2004-06-19.flac16?output=json&callback=JSON_CALLBACK';
+    //
+    //     this.http({
+    //         method: 'GET',
+    //         url: concertUrl,
+    //         withCredentials: true,
+    //         headers: {
+    //             'Access-Control-Allow-Origin': window.location.origin,
+    //             'Cache-Control': ['no-cache', 'max-age=0', 'must-revalidate', 'no-store']
+    //         }
+    //     }).then(function(data){},function(err){});
+    // }
+
+    getArchive(){
+
+        var concertUrl = 'http://archive.org/details/sci2004-06-19.flac16?output=json&callback=JSON_CALLBACK';
+
+        this.http
+            .jsonp( concertUrl )
+            .then(
+                function getArchiveSuccess(response) {
+                    console.log(response.data)
+                    console.log(response.data.server);
+                },
+                function getArchiveError(error) {
+                    console.log('There was an error getting the data', err);
+                });
     }
 }
+
+
 
 export default PlayerController;
