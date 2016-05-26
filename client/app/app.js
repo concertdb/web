@@ -6,7 +6,7 @@ import AppComponent from './app.component';
 import 'normalize.css';
 
 angular.module('app', [
-    uiRouter,
+    'ui.router',
     Common.name,
     Components.name
   ])
