@@ -1,16 +1,61 @@
+// function playerController($http){
+//     "ngInject";
+//     var http = $http;
+//
+//     var vm = this;
+//     var songService = {};
+//
+//     vm.name = 'player';
+//     vm.concert = [];
+//
+//     songService.getConcert = function getConcert() {
+//
+//         var concertUrl = 'http://archive.org/details/sci2004-06-19.flac16?output=json&callback=JSON_CALLBACK';
+//
+//         return http.jsonp(concertUrl);
+//
+//     };
+//     songService.getConcert().then(function(response){
+//         // vm.archive = response.data.files
+//         // console.log(response.data.files);
+//         // response.data.files.forEach(function(file){
+//         //     if(file.format === 'VBR MP3'){
+//         //         tempArr.push(file)
+//         //     }
+//         // });
+//         // vm.archive = tempArr;
+//
+//         var songArray = [];
+//         for(var item in response.data.files){
+//             // this condition is required to prevent moving forward to prototype chain
+//             if(response.data.files.hasOwnProperty(item)){
+//                 console.log(item);
+//                 songArray.push(response.data.files[item]);
+//             }
+//         }
+//         vm.archive = songArray;
+//     });
+// }
+// export default playerController;
+
 class PlayerController {
 
     constructor($http) {
         "ngInject";
+        const controller = this;
+        controller.http = $http;
 
-        this.http = $http;
 
-        this.name = 'player';
-        this.songs = this.getSongs();
-        this.archive = this.getArchive();
+        controller.name = 'player';
+        controller.songs = controller.getSongs();
+
+        // controller.getArchive().then(function (data) {
+        //     // debugger;
+        //     controller.archive = data.data;
+        // });
     };
 
-    getSongs(){
+    getSongs() {
 
         return [
             {
@@ -56,39 +101,6 @@ class PlayerController {
         ];
 
     }
-
-    // getArchive(){
-    //
-    //     var concertUrl = 'http://archive.org/details/sci2004-06-19.flac16?output=json&callback=JSON_CALLBACK';
-    //
-    //     this.http({
-    //         method: 'GET',
-    //         url: concertUrl,
-    //         withCredentials: true,
-    //         headers: {
-    //             'Access-Control-Allow-Origin': window.location.origin,
-    //             'Cache-Control': ['no-cache', 'max-age=0', 'must-revalidate', 'no-store']
-    //         }
-    //     }).then(function(data){},function(err){});
-    // }
-
-    getArchive(){
-
-        var concertUrl = 'http://archive.org/details/sci2004-06-19.flac16?output=json&callback=JSON_CALLBACK';
-
-        this.http
-            .jsonp( concertUrl )
-            .then(
-                function getArchiveSuccess(response) {
-                    console.log(response.data)
-                    console.log(response.data.server);
-                },
-                function getArchiveError(error) {
-                    console.log('There was an error getting the data', err);
-                });
-    }
 }
-
-
 
 export default PlayerController;
