@@ -29,29 +29,29 @@
     </div>
     <br />
     <button play-music>Play</button>
-    -
+     -
     <button pause-music>Pause</button>
-    -
+     -
     <button stop-music>Stop</button>
-    -
+     -
     <button repeat-music>Repeat ({{ repeat }})</button>
-    -
+     -
     <button play-pause-toggle data-play="Play!" data-pause="Pause!">Play Toggle</button>
 
     Is Playing: {{ isPlaying }}
     <br/>
     <br/>Volume: {{ volume }} -
     <button music-volume data-type="increase">+</button>
-    -
+     -
     <button music-volume data-type="decrease">-</button>
-    -
+     -
     <button mute-music>Mute ({{ mute }})</button>
     <br/>
     <br/>
     <button prev-track>Prev Track</button>
-    -
+     -
     <button next-track>Next Track</button>
-    -
+     -
     <button clear-playlist>Clear Playlist</button>
     <br/>
     <br/>
@@ -59,7 +59,7 @@
     <ul>
         <li ng-repeat="song in playlist">
             <a play-from-playlist="song">{{ song.title }}</a>
-            -
+             -
             <a remove-from-playlist="song" data-index="{{$index}}">
                 <small>(remove)</small>
             </a>
@@ -67,11 +67,4 @@
         </li>
     </ul>
 
-    <hr>
-
-    <h2>Archive Response</h2>
-
-    <span>
-        {{vm.archive}}
-    </span>
 </div>
