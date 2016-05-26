@@ -1,0 +1,12 @@
+<sound-manager></sound-manager>
+
+<ul>
+    <li ng-repeat="song in vm.songs">
+        <button music-player="play" add-song="song">
+            {{ song.title }}
+        </button>
+        <button music-player add-song="song">
+            +
+        </button>
+    </li>
+</ul>
