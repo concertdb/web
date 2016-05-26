@@ -9,6 +9,7 @@
     "angular-animate": "^1.5.5",
     "angular-aria": "^1.5.5",
     "angular-material": "^1.1.0-rc4-master-06e7e99",
+    "angular-soundmanager2": "git+ssh://git@github.com/perminder-klair/angular-soundmanager2#c91f7bd9f2f201ae9a62439fbdd289de1da621a7",
     "angular-ui-router": "^0.2.15",
     "normalize.css": "^3.0.3"
   },

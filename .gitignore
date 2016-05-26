@@ -3,6 +3,7 @@
 ### developer workspace
 dev-workspace
 .idea/
+dist/
 
 
 # Created by https://www.gitignore.io/api/osx,webstorm,node
