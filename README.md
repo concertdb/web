@@ -12,19 +12,14 @@ Link to the backend app: (https://github.com/concertdb/api)
 
 I recently learned about a framework called Sails JS, and was very intrigued by its flexible approach to building practical, production ready Node.js apps. It comes with a number of awesome features, like auto-generated rest apis, a very powerful ORM (Waterline), websocket support, and the fact that it is db and front-end agnostic. I built a few demo apps with it, and witnessed firsthand how relatively simple it was to set up RESTful APIs. So I thought it would be fun to use it for my final project. A few days ago I set up models and associations for Concerts, Concert Recordings, Songs, Users, and Playlists. Once I have my front-end fleshed out enough, I will connect it to the back-end to start getting data into the Postgres database.
 
+
+
 #Day 1 - Setup
 
 I went with (https://github.com/el-besto "el-besto's") advice on using the NG6 starter repo as a starting point. He made some slight modifications to the config, build, and testing files, as well as setting the default styling files to be LESS. He also walked me through installing Angular Material, Angular's UI framework that is an implemntation of Google's material design specifications. Below is some reference information on the NG6 starter repo that I used as a base.
 
 
-<p align="center">
-  <a href="https://angularclass.com" target="_blank">
-    <img src="https://cloud.githubusercontent.com/assets/1016365/9864650/93a5660a-5b00-11e5-8716-a0d538d12913.png" alt="ng6-starter" width="100px;" >
-  </a>
-  <!-- old img url: http://res.cloudinary.com/angularclass/image/upload/v1431802814/ng6_vrmd60.png -->
-</p>
-
-# NG6 [![Join Slack](https://img.shields.io/badge/slack-join-brightgreen.svg)](https://angularclass.com/slack-join) [![Join the chat at https://gitter.im/angularclass/NG6-starter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/angularclass/NG6-starter?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+### NG6 [![Join Slack](https://img.shields.io/badge/slack-join-brightgreen.svg)](https://angularclass.com/slack-join) [![Join the chat at https://gitter.im/angularclass/NG6-starter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/angularclass/NG6-starter?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 > The de facto starter repo for building scalable apps with [Angular](https://angularjs.org), [ES6](https://git.io/es6features), and [Webpack](http://webpack.github.io/)
 
@@ -37,7 +32,7 @@ This repo serves as a minimal starter for those looking to get up-and-running wi
 * [Stylus](https://learnboost.github.io/stylus/) support
 
 
-## Build System
+#### Build System
 NG6 uses Gulp and Webpack together for its build system. Yes, you don't need Gulp if you're using Webpack. This is true if your build system is only responsible for file manipulation. However, ours is not.
 
 `Webpack` handles all file-related concerns:
@@ -57,7 +52,7 @@ NG6 uses Gulp and Webpack together for its build system. Yes, you don't need Gul
 
 **Check out the [JSPM version](https://github.com/angularclass/NG6-starter/tree/jspm)--an alternative to Webpack as an ES6 build system.**
 
-## File Structure
+#### File Structure
 We use a componentized approach with NG6. This will be the eventual standard (and particularly helpful, if using Angular's new router) as well as a great way to ensure a tasteful transition to Angular 2, when the time is ripe. Everything--or mostly everything, as we'll explore (below)--is a component. A component is a self-contained concern--may it be a feature or strictly-defined, ever-present element of the UI (such as a header, sidebar, or footer). Also characteristic of a component is that it harnesses its own stylesheets, templates, controllers, routes, services, and specs. This encapsulation allows us the comfort of isolation and structural locality. Here's how it looks:
 ```
 client
@@ -76,3 +71,14 @@ client
 ⋅⋅⋅⋅⋅⋅⋅⋅home.spec.js * home specs (for entry, component, and controller)
 ```
 
+###Day 1 Challenges
+
+###Plan for Day 2: Implementing Angular SoundMangaer2
+
+On day two I want to implement the Angular SoundMangaer2 module, the music player that had the most robust set of features of any Node module I found during my research.
+
+
+
+#Day 2
+
+###What I accompliished:
