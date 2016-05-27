@@ -1,8 +1,25 @@
-<div>
-    <h1>{{ vm.name }}</h1>
+<navbar></navbar>
+
+<button ng-click="vm.testService()">testing services</button>
+
+<div class="concert-item">
+    <div>
+        <h1>{{ vm.concertTitle }}</h1>
+    </div>
+    <div class="concert-details">
+        <p>
+            Server: {{ vm.concertServer}}
+        </p>
+        <p>
+            Directory: {{ vm.concertDirectory}}
+        </p>
+    </div>
 </div>
 
-    <h2>Archive Response</h2>
-    <li ng-repeat="file in vm.concert | filter:{'format': 'VBR MP3'}">
-        {{file.title}} - {{file.format}}
+
+
+<ul class ="concert-song-list">
+    <li ng-repeat="file in vm.concertSongs | filter:{'format': 'VBR MP3'}">
+        {{file.title}}
     </li>
+</ul>
