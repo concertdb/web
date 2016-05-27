@@ -1,10 +1,10 @@
 #ConcertDB - Web
 
-I have a serious passion for live music, and as such, am a frequent visitor to archive.org to stream live recordings of thousands of concerts. I thought it would be fun to build a web app that streams all of the concerts of my favorite bands, and would also give me the ability to make playlists of my favorite concerts. 
+I have a serious passion for live music, and as such, am a frequent visitor to archive.org to stream their vast library of free concert recordings. I thought it would be fun to build a web app that streams all of the concerts of my favorite bands on archive.org, and would also give me the ability to make playlists of my favorite concerts. 
 
 I plan on keeping a journal of my work, and will write a short summary each day of what I accomplished, what went wrong, and what I want to accomplish the next day. Hopefully this will help me keep my work focused, and will hellp anyone who looks at the code in the future better understand why I did things the way I did.
 
-I chose to go with Angular 1.5 for my front end for two reasons: Primarily because I knew it would be a challenge. But also because I had some familiarity with it (As opposed to React or Angular 2, which I haven't had the chance to learn yet... But plan on tackling in the very near future).
+I chose to go with Angular 1.5 for my front end for two reasons: Primarily because I knew it would be a challenge. But also because I had some familiarity with it.
 
 ## Brief Back-end Overview
 
