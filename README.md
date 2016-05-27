@@ -8,13 +8,13 @@ I chose to go with Angular 1.5 for my front end for two reasons: Primarily becau
 
 ## Brief Back-end Overview
 
-Link to the backend app: `https://github.com/concertdb/api`
+Link to the backend app: (https://github.com/concertdb/api)
 
 I recently learned about a framework called Sails JS, and was very intrigued by its flexible approach to building practical, production ready Node.js apps. It comes with a number of awesome features, like auto-generated rest apis, a very powerful ORM (Waterline), websocket support, and the fact that it is db and front-end agnostic. I built a few demo apps with it, and witnessed firsthand how relatively simple it was to set up RESTful APIs. So I thought it would be fun to use it for my final project. A few days ago I set up models and associations for Concerts, Concert Recordings, Songs, Users, and Playlists. Once I have my front-end fleshed out enough, I will connect it to the back-end to start getting data into the Postgres database.
 
 #Day 1 - Setup
 
-
+I went with (https://github.com/el-besto "el-besto's") advice on using the NG6 starter repo as a starting point. He made some slight modifications to the config, build, and testing files, as well as setting the default styling files to be LESS. He also walked me through installing Angular Material, Angular's UI framework that is an implemntation of Google's material design specifications. Below is some reference information on the NG6 starter repo that I used as a base.
 
 
 <p align="center">
