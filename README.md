@@ -1,3 +1,22 @@
+#ConcertDB - Web
+
+I have a serious passion for live music, and as such, am a frequent visitor to archive.org to stream live recordings of thousands of concerts. I thought it would be fun to build a web app that streams all of the concerts of my favorite bands, and would also give me the ability to make playlists of my favorite concerts. 
+
+I plan on keeping a journal of my work, and will write a short summary each day of what I accomplished, what went wrong, and what I want to accomplish the next day. Hopefully this will help me keep my work focused, and will hellp anyone who looks at the code in the future better understand why I did things the way I did.
+
+I chose to go with Angular 1.5 for my front end for two reasons: Primarily because I knew it would be a challenge. But also because I had some familiarity with it (As opposed to React or Angular 2, which I haven't had the chance to learn yet... But plan on tackling in the very near future).
+
+## Brief Back-end Overview
+
+Link to the backend app: `https://github.com/concertdb/api`
+
+I recently learned about a framework called Sails JS, and was very intrigued by its flexible approach to building practical, production ready Node.js apps. It comes with a number of awesome features, like auto-generated rest apis, a very powerful ORM (Waterline), websocket support, and the fact that it is db and front-end agnostic. I built a few demo apps with it, and witnessed firsthand how relatively simple it was to set up RESTful APIs. So I thought it would be fun to use it for my final project. A few days ago I set up models and associations for Concerts, Concert Recordings, Songs, Users, and Playlists. Once I have my front-end fleshed out enough, I will connect it to the back-end to start getting data into the Postgres database.
+
+#Day 1 - Setup
+
+
+
+
 <p align="center">
   <a href="https://angularclass.com" target="_blank">
     <img src="https://cloud.githubusercontent.com/assets/1016365/9864650/93a5660a-5b00-11e5-8716-a0d538d12913.png" alt="ng6-starter" width="480px;" >
