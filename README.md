@@ -19,7 +19,7 @@ I recently learned about a framework called Sails JS, and was very intrigued by 
 
 <p align="center">
   <a href="https://angularclass.com" target="_blank">
-    <img src="https://cloud.githubusercontent.com/assets/1016365/9864650/93a5660a-5b00-11e5-8716-a0d538d12913.png" alt="ng6-starter" width="480px;" >
+    <img src="https://cloud.githubusercontent.com/assets/1016365/9864650/93a5660a-5b00-11e5-8716-a0d538d12913.png" alt="ng6-starter" width="100px;" >
   </a>
   <!-- old img url: http://res.cloudinary.com/angularclass/image/upload/v1431802814/ng6_vrmd60.png -->
 </p>
@@ -36,26 +36,7 @@ This repo serves as a minimal starter for those looking to get up-and-running wi
 * A full testing system in place
 * [Stylus](https://learnboost.github.io/stylus/) support
 
-**Check out the [JSPM version](https://github.com/angularclass/NG6-starter/tree/jspm)--an alternative to Webpack as an ES6 build system.**
 
-> If you're looking for a preliminary [Angular 2](https://angular.io/) build, please use the [angular2-webpack-starter](https://github.com/angularclass/angular2-webpack-starter).
-___
-
-# Table of Contents
-* [Walkthrough](#walkthrough)
-    * [Build System](#build-system)
-    * [File Structure](#file-structure)
-    * [Testing Setup](#testing-setup)
-* [Getting Started](#getting-started)
-    * [Dependencies](#dependencies)
-    * [Installing](#installing)
-    * [Running the App](#running-the-app)
-        * [Gulp Tasks](#gulp-tasks)
-        * [Testing](#testing)
-		* [Generating Components](#generating-components)		
-* [Starter Kit Support and Questions](#starter-kit-support-and-questions)
-
-# Walkthrough
 ## Build System
 NG6 uses Gulp and Webpack together for its build system. Yes, you don't need Gulp if you're using Webpack. This is true if your build system is only responsible for file manipulation. However, ours is not.
 
