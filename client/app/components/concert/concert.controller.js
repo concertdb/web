@@ -1,25 +1,24 @@
 // jscs:disable
-// class ConcertController {
-//     constructor() {
-//         this.name = 'concert';
-//     }
-// }
 
 function concertController($log, $http, ArchiveOrgService, ConcertService){
     "ngInject";
-    var http = $http;
+    const http = $http;
 
     // ArchiveOrgService.getConcertById();
-    var vm = this;
-    var songService = {};
+    const vm = this;
+    const songService = {};
 
+    //Initialize the concert view model data elements that will be displayed on the page
     vm.name = 'concert';
     vm.concertSongs = [];
-    vm.concertTitle = '';
-    vm.concertServer = '';
-    vm.concertDirectory = '';
+    vm.concertDate = '';
+    vm.concertArtist = '';
+    vm.concertLocation = '';
+    vm.concertDescription = '';
+    vm.concertNotes = '';
+    vm.concertTaper = '';
+    vm.concertSourceInfo = '';
     //@todo: after working out the data flow. Will remove and hook front-end buttons onto $stateParams.
-
 
     //testing fixture.
     vm.testService = function() {
@@ -42,10 +41,10 @@ function concertController($log, $http, ArchiveOrgService, ConcertService){
 
         $http.jsonp(concertUrl)
             .then(function(response) {
-                $log.log('ArchiveOrgService. jsonp repo', response);
+                // $log.log('ArchiveOrgService. jsonp repo', response);
                 concertService.parseArchiveOrgConcert(response);
             }, function(err){
-            })
+            });
 
     };
 
@@ -59,25 +58,45 @@ function concertController($log, $http, ArchiveOrgService, ConcertService){
 
     concertService.parseArchiveOrgConcert = (concert) => {
         $log.log('Hitting ConcertService');
-        console.log('ArchiveOrgService. jsonp repo', concert);
+        // console.log('ArchiveOrgService. jsonp repo', concert);
 
-        //@todo: diginto concert here.... along the way do
+        //Would this be my concert cache?
+        let currentConcertSongArray = [];
 
         //Attach concert info to the vm here
-        vm.concertTitle = concert.data.metadata.title;
+        vm.concertDate = concert.data.metadata.date;
+        vm.concertArtist = concert.data.metadata.creator;
+        vm.concertLocation = concert.data.metadata.coverage;
+        vm.concertVenue = concert.data.metadata.venue;
+        vm.concertDescription = concert.data.metadata.description;
+        vm.concertNotes = concert.data.metadata.notes;
+        vm.concertTaper = concert.data.metadata.taper;
+        vm.concertSourceInfo = concert.data.metadata.source;
 
-        //Parse through concert to get the songs to be passed off to the song service
-        vm.concertSongs = concert.data.files
+        //Display the songs in the view model
+        vm.concertSongs = concert.data.files;
+        // $log.log(concert.data.files);
 
-        // for (song in concert.data.files) {
-        //     debugger;
-        //     $log.log(song);
-        //     let concertSongTitle = song.name
-        // }
+        //@todo: figure out how to only only pass the
+        //Iterate over the array of files, and pass each song into the song service, then pass each song into the concertSongArray
+        concert.data.files.forEach(function(song) {
+
+            //Only grab files that are VBR MP3 format
+            if (song.format === "VBR MP3") {
+
+                //Parse the song and save it to the db
+                let formattedSong = SongService.parseArchiveOrgSong(song);
+                //Add the song to the cache
+                currentConcertSongArray.push(formattedSong);
+            }
+
+
+        });
+        // $log.log("concertSongArray:", concertSongArray);
 
         //in concert.tracks.forEach()
         //SongService.saveSongToDb();
-        SongService.parseArchiveOrgSong();
+        // SongService.parseArchiveOrgSong();
 
     };
 
@@ -88,11 +107,23 @@ function concertController($log, $http, ArchiveOrgService, ConcertService){
      *  song.service.js
      */
     const SongService = {};
+    const parsedSong = {};
 
     SongService.parseArchiveOrgSong = (song) => {
-        debugger;
+        $log.log(song);
+
+        //@todo: Store properties from the archive song object as properties on the song object that will be saved to the db
+
+
         $log.log('Parsing song from Archive.org, then passing off to save to my concertdb.');
+        //Pass the properly formatted song object to the save function, which will save it to the db
+        SongService.saveSong(parsedSong);
     };
+
+    SongService.saveSong = (song) => {
+        $log.log('Saving the song to the db');
+        //ajax call to look up the song in the db. If it is not there, send a post request to create the song
+    }
 
 
     // songService.getConcert = function getConcert() {

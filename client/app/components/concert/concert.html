@@ -4,22 +4,40 @@
 
 <div class="concert-item">
     <div>
-        <h1>{{ vm.concertTitle }}</h1>
+        <h1>{{ vm.concertDate }}</h1>
     </div>
     <div class="concert-details">
+        <h3>
+            {{ vm.concertArtist }}
+        </h3>
+        <h3>
+            {{ vm.concertLocation }}
+        </h3>
+        <h3>
+            {{ vm.concertVenue }}
+        </h3>
         <p>
-            Server: {{ vm.concertServer}}
+            {{ vm.concertDescription }}
         </p>
         <p>
-            Directory: {{ vm.concertDirectory}}
+            {{ vm.concertNotes }}
         </p>
+        <p>
+            {{ vm.concertTaper }}
+        </p>
+        <p>
+            {{ vm.concertSourceInfo }}
+        </p>
+
     </div>
 </div>
 
 
 
 <ul class ="concert-song-list">
-    <li ng-repeat="file in vm.concertSongs | filter:{'format': 'VBR MP3'}">
-        {{file.title}}
+    <!--@todo: refactor code on the backend to set vm.concertSongs equal to just the filtered mp3s so this filter can be taken out-->
+    <!--@todo: order the songs by the whole value of the track number, not by the first digit in the number-->
+    <li ng-repeat="song in vm.concertSongs | orderBy: 'track' | filter:{'format': 'VBR MP3'}">
+        {{song.track}} - {{song.title}} - {{song.length}}
     </li>
 </ul>
