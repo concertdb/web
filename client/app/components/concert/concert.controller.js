@@ -44,8 +44,8 @@ function concertController($log, $http, ArchiveOrgService, ConcertService){
                 // $log.log('ArchiveOrgService. jsonp repo', response);
                 concertService.parseArchiveOrgConcert(response);
             }, function(err){
+                $log.log("Error: ", err);
             });
-
     };
 
 
@@ -63,7 +63,7 @@ function concertController($log, $http, ArchiveOrgService, ConcertService){
         //Would this be my concert cache?
         let currentConcertSongArray = [];
 
-        //Attach concert info to the vm here
+        //Attach concert info data items to the vm here
         vm.concertDate = concert.data.metadata.date;
         vm.concertArtist = concert.data.metadata.creator;
         vm.concertLocation = concert.data.metadata.coverage;
@@ -77,8 +77,8 @@ function concertController($log, $http, ArchiveOrgService, ConcertService){
         vm.concertSongs = concert.data.files;
         // $log.log(concert.data.files);
 
-        //@todo: figure out how to only only pass the
-        //Iterate over the array of files, and pass each song into the song service, then pass each song into the concertSongArray
+        //@todo: figure out how to only only pass files with the format of 'VBR MP3'
+        //Iterate over the array of files, and pass each song into the song service, then pass each song into the concertSongArray cache
         concert.data.files.forEach(function(song) {
 
             //Only grab files that are VBR MP3 format
@@ -113,7 +113,6 @@ function concertController($log, $http, ArchiveOrgService, ConcertService){
         $log.log(song);
 
         //@todo: Store properties from the archive song object as properties on the song object that will be saved to the db
-
 
         $log.log('Parsing song from Archive.org, then passing off to save to my concertdb.');
         //Pass the properly formatted song object to the save function, which will save it to the db
