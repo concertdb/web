@@ -72,13 +72,47 @@ client
 ```
 
 ###Day 1 Challenges
+It
 
-###Plan for Day 2: Implementing Angular SoundMangaer2
-
+###Plan for Day 2
 On day two I want to implement the Angular SoundMangaer2 module, the music player that had the most robust set of features of any Node module I found during my research.
 
 
 
-#Day 2
+#Day 2 - Music Player
+
+###What I accomplished
+Was able to get the music player component with a full set of buttons and functionality to successfully play music using the Angular SoundManager2 module. 
+
+###Challenges
+Setting up the SoundManager2 module was much more difficult than expected. There was very poor documentation on how to install it without using bower components. Ultimately I was able to install it by importing a specific version from github.
+
+###Play for Day 3
+Start pulling data from archive and parsing through it
+
+
+
+#Day 3 - Handling Archive Data
 
 ###What I accompliished:
+Set up the services I would need to complete the flow of data from archive.org into my db and onto the screen.
+1. archiveOrgService - gets the concert from the page
+2. concertService - parses the response from archive.org into a a concert object that can be saved to my db. Also iterates over all the songs and sends them to the songService for parsing.
+3. songService - parses the song from the concertService and saves it to the db.
+4. concertCacheService - stores the current concert and songs on the front-end.
+
+I was able to get the archiveOrgService to pull a concert from archive.org (passing in a hardcoded concert for now), and using the concert and song services, parse that data response and display all of the information about a concert and its songs that I will need for the concert show page.
+
+###Challenges
+The biggest challenge was knowing where to start. Very early on I was able to hit the archive.org endpoint, but was very unsure about what to do with that data once I had it. 
+
+What ended u being immensely helpful in overcoming this roadblock was drawing mockups of the data flow to determine what services to define, and what functions those services should have. Once I had that roadmap, implementing the services in the way that I wanted become much easier.
+
+###Plan for Day 4
+Continue implementing the Concert, Song, and Concert Cache services. Determine how to pull the list of concerts for a given band from archive.org.
+
+
+
+#Day 4 - More Services
+
+
