@@ -72,10 +72,11 @@ client
 ```
 
 ###Day 1 Challenges
-It
+No major roadblocks in the setup of the base app.
 
 ###Plan for Day 2
 On day two I want to implement the Angular SoundMangaer2 module, the music player that had the most robust set of features of any Node module I found during my research.
+
 
 
 
@@ -89,6 +90,7 @@ Setting up the SoundManager2 module was much more difficult than expected. There
 
 ###Play for Day 3
 Start pulling data from archive and parsing through it
+
 
 
 
@@ -110,6 +112,7 @@ What ended u being immensely helpful in overcoming this roadblock was drawing mo
 
 ###Plan for Day 4
 Continue implementing the Concert, Song, and Concert Cache services. Determine how to pull the list of concerts for a given band from archive.org.
+
 
 
 
