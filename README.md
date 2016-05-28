@@ -99,8 +99,11 @@ Start pulling data from archive and parsing through it
 ###What I accompliished:
 Set up the services I would need to complete the flow of data from archive.org into my db and onto the screen.
 1. archiveOrgService - gets the concert from the page
+
 2. concertService - parses the response from archive.org into a a concert object that can be saved to my db. Also iterates over all the songs and sends them to the songService for parsing.
+
 3. songService - parses the song from the concertService and saves it to the db.
+
 4. concertCacheService - stores the current concert and songs on the front-end.
 
 I was able to get the archiveOrgService to pull a concert from archive.org (passing in a hardcoded concert for now), and using the concert and song services, parse that data response and display all of the information about a concert and its songs that I will need for the concert show page.
