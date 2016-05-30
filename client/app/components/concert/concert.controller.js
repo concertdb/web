@@ -6,6 +6,7 @@ function concertController($log, $http, ArchiveOrgService, ConcertService){
 
     // ArchiveOrgService.getConcertById();
     const vm = this;
+    const archiveOrgService = {};
     const songService = {};
 
     //Initialize the concert view model data elements that will be displayed on the page
@@ -27,13 +28,16 @@ function concertController($log, $http, ArchiveOrgService, ConcertService){
     };
 
 
+    const archiveConcertSearchService = {};
+
+
 
 
 
     /**
      *  archiveOrg.service.js
      */
-    const archiveOrgService = {};
+
     archiveOrgService.getConcertById = (concertId) => {
         $log.log('Hitting ArchiveService');
         concertId = 'sci2004-06-19.flac16';
@@ -43,26 +47,16 @@ function concertController($log, $http, ArchiveOrgService, ConcertService){
             .then(function(response) {
                 // $log.log('ArchiveOrgService. jsonp repo', response);
                 concertService.parseArchiveOrgConcert(response);
+                //@todo: Dig into the object here, and then make the subsequent code easier to read. concert.data.metadata is only here.
+                // vm.initializeConcertViewModel(response.data.metadata);
+                vm.initializeConcertViewModel(response);
             }, function(err){
                 $log.log("Error: ", err);
             });
     };
 
 
-
-
-    /**
-     *  concert.service.js
-     */
-    const concertService = {};
-
-    concertService.parseArchiveOrgConcert = (concert) => {
-        $log.log('Hitting ConcertService');
-        // console.log('ArchiveOrgService. jsonp repo', concert);
-
-        //Would this be my concert cache?
-        let currentConcertSongArray = [];
-
+    vm.initializeConcertViewModel = function(concert){
         //Attach concert info data items to the vm here
         vm.concertDate = concert.data.metadata.date;
         vm.concertArtist = concert.data.metadata.creator;
@@ -72,6 +66,49 @@ function concertController($log, $http, ArchiveOrgService, ConcertService){
         vm.concertNotes = concert.data.metadata.notes;
         vm.concertTaper = concert.data.metadata.taper;
         vm.concertSourceInfo = concert.data.metadata.source;
+    };
+
+
+
+    /**
+     *  concert.service.js
+     */
+    const concertService = {};
+
+    concertService.currentConcertSongArray = [];
+
+    concertService.parseArchiveOrgConcert = (concert) => {
+        $log.log('Hitting ConcertService');
+        // console.log('ArchiveOrgService. jsonp repo', concert);
+
+
+        let {date, creator, coverage, venue, description, notes, taper, source} = concert.data.metadata;
+
+        let concertRecordingToSave = {
+            artist: creator,
+            date: date,
+            //year: ,
+            location: coverage,
+            venue: venue,
+            description: description,
+            notes: notes,
+            source_info: source,
+            taper: taper
+
+        };
+        let createConcertRecording = $http.post('http://localhost:8000/v1/concert_recordings', concertRecordingToSave)
+            .then(function successCallback(response) {
+                $log.log("Successful save!!");
+        }, function errorCallback(response) {
+            $log.log('There was an error posting the data', response);
+        });
+
+        // let getDbConcerts = $http.get('http://localhost:8000/v1/concert_recordings')
+        //     .then(function successCallback(response) {
+        //             $log.log("Got concert!!", response);
+        //     }, function errorCallback(response) {
+        //         $log.log('There was an error posting the data', response);
+        //     });
 
         //Display the songs in the view model
         vm.concertSongs = concert.data.files;
@@ -87,7 +124,7 @@ function concertController($log, $http, ArchiveOrgService, ConcertService){
                 //Parse the song and save it to the db
                 let formattedSong = SongService.parseArchiveOrgSong(song);
                 //Add the song to the cache
-                currentConcertSongArray.push(formattedSong);
+                concertService.currentConcertSongArray.push(formattedSong);
             }
 
 
@@ -110,9 +147,12 @@ function concertController($log, $http, ArchiveOrgService, ConcertService){
     const parsedSong = {};
 
     SongService.parseArchiveOrgSong = (song) => {
+        $log.log("Hitting Song Service")
         $log.log(song);
 
         //@todo: Store properties from the archive song object as properties on the song object that will be saved to the db
+        //@todo: construct the url that will be added to each song
+        //@todo: use the song object with the url to load on the page so that the player can find a url when the song is clicked
 
         $log.log('Parsing song from Archive.org, then passing off to save to my concertdb.');
         //Pass the properly formatted song object to the save function, which will save it to the db

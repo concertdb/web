@@ -13,10 +13,20 @@
             <!--</button>-->
         </li>
     </ul>
-    <button play-all="songs">Play all</button>
-    <button play-all="songs" data-play="false">Add all</button>
 
     <sound-manager></sound-manager>
+
+    <h4>Playlist</h4>
+    <ul>
+        <li ng-repeat="song in playlist">
+            <a play-from-playlist="song">{{ song.title }}</a>
+             -
+            <a remove-from-playlist="song" data-index="{{$index}}">
+                <small>(remove)</small>
+            </a>
+            <span ng-if="currentPlaying.id == song.id"> - (current)</span>
+        </li>
+    </ul>
 
     <p>
         Currently Playing: {{ currentPlaying.title }} by {{ currentPlaying.creator }} ({{ currentPostion }} / {{ currentDuration }})
@@ -55,16 +65,5 @@
     <button clear-playlist>Clear Playlist</button>
     <br/>
     <br/>
-    <h5>Playlist</h5>
-    <ul>
-        <li ng-repeat="song in playlist">
-            <a play-from-playlist="song">{{ song.title }}</a>
-             -
-            <a remove-from-playlist="song" data-index="{{$index}}">
-                <small>(remove)</small>
-            </a>
-            <span ng-if="currentPlaying.id == song.id"> - (current)</span>
-        </li>
-    </ul>
 
 </div>
