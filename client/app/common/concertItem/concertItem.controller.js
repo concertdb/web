@@ -1,9 +1,10 @@
-function concertItemController($log, $stateParams, ArchiveOrgService, ConcertService, TrackService){
+function concertItemController($stateParams, ConcertService){
     "ngInject";
     const vm = this;
     vm.name = 'concertItem';
-    debugger;
-    $log.log($stateParams);
+    vm.concertSongs = ConcertService.concertSongs[$stateParams.id];
+    vm.currentConcert = ConcertService.currentConcert[$stateParams.id];
 }
+
 export default concertItemController;
 
