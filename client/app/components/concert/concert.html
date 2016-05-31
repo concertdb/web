@@ -1,6 +1,11 @@
 <navbar></navbar>
 
 <button ng-click="vm.testService()">testing services</button>
+<li ng-repeat="concert in vm.searchResults">
+    <a href="http://archive.org/details/{{concert.identifier}}">{{concert.title}}</a>
+    <button ng-click="vm.getConcertById(concert.identifier)">Get Concert By ID</button>
+</li>
+
 
 <div class="concert-item">
     <div>
@@ -28,6 +33,7 @@
         <p>
             {{ vm.concertSourceInfo }}
         </p>
+        <a href="{{vm.archive_url}}" target="_blank"></a>
     </div>
 </div>
 
