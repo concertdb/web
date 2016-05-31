@@ -1,6 +1,11 @@
 <navbar></navbar>
 
 <button ng-click="vm.testService()">testing services</button>
+<li ng-repeat="concert in vm.searchResults">
+    <a href="http://archive.org/details/{{concert.identifier}}">{{concert.title}}</a>
+    <button ng-click="vm.getConcertById(concert.identifier)">Get Concert By ID</button>
+</li>
+
 
 <div class="concert-item">
     <div>
@@ -28,6 +33,7 @@
         <p>
             {{ vm.concertSourceInfo }}
         </p>
+        <a href="{{vm.archive_url}}" target="_blank"></a>
     </div>
 </div>
 
@@ -35,6 +41,14 @@
     <!--@todo: refactor code on the backend to set vm.concertSongs equal to just the filtered mp3s so this filter can be taken out-->
     <!--@todo: order the songs by the whole value of the track number, not by the first digit in the number-->
     <li ng-repeat="song in vm.concertSongs | orderBy: 'track' | filter:{'format': 'VBR MP3'}">
-        {{song.track}} - {{song.title}} - {{song.length}}
+        <a music-player add-song="song">
+            <span class="song-row">
+                {{song.track}} - {{song.title}} - {{song.length}}
+            </span>
+        </a>
+
     </li>
+    <button play-all="songs" data-play="false">Add All Songs</button>
 </ul>
+
+<player></player>
