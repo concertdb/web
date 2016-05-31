@@ -1,0 +1,55 @@
+<div class="concert-item">
+    <div>
+        <h1>{{ vm.currentConcert.date }}</h1>
+        <!--<a href="{{vm.archive_url}}" target="_blank"></a>-->
+    </div>
+    <div class="concert-details">
+        <p>
+            {{ vm.currentConcert.title }}
+        </p>
+        <p>
+            {{ vm.currentConcert.artist }}
+        </p>
+        <p>
+            {{ vm.currentConcert.description }}
+        </p>
+        <p>
+            {{ vm.currentConcert.location }}
+        </p>
+        <p>
+            {{ vm.currentConcert.date }}
+        </p>
+        <p>
+            {{ vm.currentConcert.year }}
+        </p>
+        <p>
+            {{ vm.currentConcert.concertId }}
+        </p>
+
+    </div>
+</div>
+
+
+
+
+
+<ul class ="concert-song-list">
+    <li ng-repeat="song in vm.concertSongs | orderBy: 'track'">
+        <a music-player add-song="song">
+            <span class="song-row">
+                {{song.track}} - {{song.title}} - {{song.length}}
+            </span>
+        </a>
+
+    </li>
+    <!--<button play-all="songs" data-play="false">Add All Songs</button>-->
+</ul>
+
+
+
+
+
+<!--//just to go back to main concertindex page. -->
+<a href="#" ui-sref="concert.index">
+    Back to Concert Index
+</a>

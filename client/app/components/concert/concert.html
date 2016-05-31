@@ -1,54 +1,53 @@
-<navbar></navbar>
+<!--<navbar></navbar>-->
 
-<button ng-click="vm.testService()">testing services</button>
-<li ng-repeat="concert in vm.searchResults">
-    <a href="http://archive.org/details/{{concert.identifier}}">{{concert.title}}</a>
-    <button ng-click="vm.getConcertById(concert.identifier)">Get Concert By ID</button>
-</li>
+<!--concertSearchForm-->
+<ng-form novalidate>
+    <input type="text" ng-model="vm.concertForm.artist" />
+    <input type="text" ng-model="vm.concertForm.year" />
+    <input type="submit" ng-click="vm.submitConcertSearchForm()">
+</ng-form>
+<!--/concertSearchForm-->
 
 
-<div class="concert-item">
-    <div>
-        <h1>{{ vm.concertDate }}</h1>
+
+
+
+<div class="concert-page">
+
+    <!--concertSearchByYearButton-->
+    <div class="pre-built-searches">
+        <div ng-repeat="item in vm.bandsActiveYears"
+             class="gd-2016"
+             ng-click="vm.submitConcertSearchForm({artist: item.artist, year: item.year})">
+            {{ item.year }}
+        </div>
     </div>
-    <div class="concert-details">
-        <h3>
-            {{ vm.concertArtist }}
-        </h3>
-        <h3>
-            {{ vm.concertLocation }}
-        </h3>
-        <h3>
-            {{ vm.concertVenue }}
-        </h3>
-        <p>
-            {{ vm.concertDescription }}
-        </p>
-        <p>
-            {{ vm.concertNotes }}
-        </p>
-        <p>
-            {{ vm.concertTaper }}
-        </p>
-        <p>
-            {{ vm.concertSourceInfo }}
-        </p>
-        <a href="{{vm.archive_url}}" target="_blank"></a>
-    </div>
+    <!--/concertSearchByYearButton-->
+
+
+
+
+
+    <!--concertSearchResults-->
+    <ul>
+        <h3>Search Results</h3>
+        <li ng-show="!vm.searchResults.length">
+            No results to show.
+        </li>
+        <li class="concert-search-result-item"
+            ng-show="vm.searchResults.length"
+            ng-repeat="concert in vm.searchResults">
+            <a href="#" ng-click="vm.clickConcertFromIndex(concert.identifier)">
+                {{ concert.title }}
+            </a>
+        </li>
+    </ul>
+    <!--/concertSearchResults-->
+
 </div>
 
-<ul class ="concert-song-list">
-    <!--@todo: refactor code on the backend to set vm.concertSongs equal to just the filtered mp3s so this filter can be taken out-->
-    <!--@todo: order the songs by the whole value of the track number, not by the first digit in the number-->
-    <li ng-repeat="song in vm.concertSongs | orderBy: 'track' | filter:{'format': 'VBR MP3'}">
-        <a music-player add-song="song">
-            <span class="song-row">
-                {{song.track}} - {{song.title}} - {{song.length}}
-            </span>
-        </a>
 
-    </li>
-    <button play-all="songs" data-play="false">Add All Songs</button>
-</ul>
 
-<player></player>
+
+
+<!--<player></player>-->
