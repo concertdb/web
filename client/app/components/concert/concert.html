@@ -1,9 +1,19 @@
-<navbar></navbar>
+<!--<navbar></navbar>-->
+
+<ng-form novalidate >
+    <input type="text" ng-model="vm.concertForm.artist" />
+    <input type="text" ng-model="vm.concertForm.year" />
+    <input type="submit" ng-click="vm.submitConcertSearchForm()">
+</ng-form>
 
 <button ng-click="vm.testService()">testing services</button>
+
+<!--concertList component-->
 <li ng-repeat="concert in vm.searchResults">
     <a href="http://archive.org/details/{{concert.identifier}}">{{concert.title}}</a>
     <button ng-click="vm.getConcertById(concert.identifier)">Get Concert By ID</button>
+    <a href="javascript:void(0)"
+       ui-sref="concertShow({id: concert.identifier})"> Click me</a>
 </li>
 
 
@@ -51,4 +61,4 @@
     <button play-all="songs" data-play="false">Add All Songs</button>
 </ul>
 
-<player></player>
+<!--<player></player>-->

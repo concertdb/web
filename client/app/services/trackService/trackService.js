@@ -1,8 +1,8 @@
 import angular from 'angular';
-import UserFactory from './user.factory';
+import TrackService from './trackService.service';
 
-let userModule = angular.module('user', [])
+let trackServiceModule = angular.module('trackService', [])
 
-.factory('User', UserFactory);
+.service('TrackService', TrackService);
 
-export default userModule;
+export default trackServiceModule;
