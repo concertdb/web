@@ -1,21 +1,10 @@
 <div class="player">
 
-    <ul>
-        <li ng-repeat="song in vm.songs">
-            <span>
-                {{ song.title }} - {{ song.creator }} - {{ song.album }}
-            </span>
-            <button music-player add-song="song">
-                +
-            </button>
-            <!--<button class="stop-button" music-player add-song="song">-->
-                <!--+-->
-            <!--</button>-->
-        </li>
-    </ul>
-
     <sound-manager></sound-manager>
 
+
+
+    <!--playlist-->
     <h4>Playlist</h4>
     <ul>
         <li ng-repeat="song in playlist">
@@ -27,12 +16,16 @@
             <span ng-if="currentPlaying.id == song.id"> - (current)</span>
         </li>
     </ul>
+    <!--/playlist-->
+
+
+
+
 
     <p>
         Currently Playing: {{ currentPlaying.title }} by {{ currentPlaying.creator }} ({{ currentPostion }} / {{ currentDuration }})
     </p>
 
-    <!--<md-progress-linear md-mode="determinate" value="30"></md-progress-linear>-->
 
     <div class="seekBase" seek-track>
         <div class="seekLoad" ng-style="{width : ( progress + '%' ) }"></div>
