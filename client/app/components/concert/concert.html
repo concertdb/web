@@ -17,6 +17,9 @@
     <div layout="row" ng-cloak>
         <md-sidenav layout="column" class="sidenav1" md-is-locked-open='true'>
             <div class="pre-built-searches">
+                <div class="artist-list-choice" ng-show="vm.concertForm.artist !== ''">
+                    {{ vm.currentArtist }}
+                </div>
                 <div class="artist-list-choice"
                      ng-show="vm.concertForm.artist === ''"
                      ng-repeat="item in vm.artistChoices"
@@ -24,7 +27,6 @@
                     {{ item.artist }}
                 </div>
                 <div class="year-list-choice"
-                     ng-show="vm.concertForm.artist !== ''"
                      ng-repeat="item in vm.yearChoices"
                      ng-click="vm.setYear(item.year)">
                     {{ item.year }}
@@ -59,4 +61,4 @@
 
 
 
-<player></player>
+<player class="player"></player>
