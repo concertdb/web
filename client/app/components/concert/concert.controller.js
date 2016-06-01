@@ -82,7 +82,8 @@ function concertController($log, $http, $state, ArchiveOrgService, ConcertServic
         }
     ];
 
-    vm.currentArtist = "";
+    vm.currentArtist = "String Cheese Incident";
+    vm.currentYear = "2016";
 
     vm.setArtist = function(artist){
         vm.concertForm.artist = artist;
@@ -91,6 +92,7 @@ function concertController($log, $http, $state, ArchiveOrgService, ConcertServic
     };
     vm.setYear = function(year){
         vm.concertForm.year = year;
+        vm.currentYear = year;
         vm.checkConcertForm();
     };
     vm.checkConcertForm = function(){
