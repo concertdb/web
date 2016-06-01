@@ -82,8 +82,11 @@ function concertController($log, $http, $state, ArchiveOrgService, ConcertServic
         }
     ];
 
+    vm.currentArtist = "";
+
     vm.setArtist = function(artist){
         vm.concertForm.artist = artist;
+        vm.currentArtist = artist;
         vm.checkConcertForm();
     };
     vm.setYear = function(year){
