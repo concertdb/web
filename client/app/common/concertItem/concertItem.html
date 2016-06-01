@@ -1,50 +1,57 @@
+<!--//just to go back to main concertindex page. -->
+<a href="#" ui-sref="concert.index">
+    Back to Concert Index
+</a>
+
+<!--concertItem-->
 <div class="concert-item">
     <div>
         <h1>{{ vm.currentConcert.date }}</h1>
         <!--<a href="{{vm.archive_url}}" target="_blank"></a>-->
     </div>
     <div class="concert-details">
-        <p>
-            {{ vm.currentConcert.title }}
-        </p>
-        <p>
+        <h3>
             {{ vm.currentConcert.artist }}
-        </p>
+        </h3>
+        <h4>
+            {{ vm.currentConcert.location }}
+        </h4>
+        <h4>
+            {{ vm.currentConcert.venue }}
+        </h4>
         <p>
             {{ vm.currentConcert.description }}
         </p>
         <p>
-            {{ vm.currentConcert.location }}
+            {{ vm.currentConcert.notes }}
         </p>
         <p>
-            {{ vm.currentConcert.date }}
+            {{ vm.currentConcert.source }}
         </p>
         <p>
-            {{ vm.currentConcert.year }}
+            {{ vm.currentConcert.taper }}
         </p>
-        <p>
-            {{ vm.currentConcert.concertId }}
-        </p>
+        <a href="{{vm.currentConcert.archiveUrl}}" target="_blank">Archive Link</a>
 
     </div>
 </div>
+<!--/concertItem-->
 
 
 
 
-
+<!--concertSongList-->
 <ul class ="concert-song-list">
     <li ng-repeat="song in vm.concertSongs | orderBy: 'track'">
-        <a music-player add-song="song">
-            <span class="song-row">
-                {{song.track}} - {{song.title}} - {{song.length}}
-            </span>
-        </a>
-
+        <div class="song-row">
+            {{song.track}} - {{song.title}} - {{song.length}}
+            <button music-player add-song="song">
+                +
+            </button>
+        </div>
     </li>
-    <!--<button play-all="songs" data-play="false">Add All Songs</button>-->
 </ul>
-
+<!--/concertSongList-->
 
 
 
@@ -53,3 +60,7 @@
 <a href="#" ui-sref="concert.index">
     Back to Concert Index
 </a>
+
+<hr>
+<h3>player below</h3>
+<player></player>
