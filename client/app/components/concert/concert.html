@@ -34,21 +34,20 @@
             </div>
         </md-sidenav>
 
-        <md-content flex layout="column">
+        <md-content flex layout="column" class="search-results">
             <!--concertSearchResults-->
             <div>
-                <h3 ng-show="vm.searchResults.length">Search Results</h3>
+                <h1 class="search-results-year-header" ng-show="vm.searchResults.length">{{ vm.currentYear }}</h1>
                 <ul>
-                    <!--<li ng-show="!vm.searchResults.length">-->
-                    <!--No results to show.-->
                     <!--</li>-->
-                    <li class="concert-search-result-item"
+                    <div class="concert-search-result-item"
                         ng-show="vm.searchResults.length"
-                        ng-repeat="concert in vm.searchResults">
-                        <a href="#" ng-click="vm.clickConcertFromIndex(concert.identifier)">
+                        ng-repeat="concert in vm.searchResults"
+                        ng-click="vm.clickConcertFromIndex(concert.identifier)">
+                        <a class="concert-link" href="#">
                             {{ concert.title }}
                         </a>
-                    </li>
+                    </div>
                 </ul>
             </div>
             <!--/concertSearchResults-->
