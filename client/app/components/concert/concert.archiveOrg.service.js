@@ -26,13 +26,20 @@ let ArchiveOrgService = function ($log, $http, $state, ConcertService) {
 
         //Construct the "currentConcert" object to be "stored" in `ConcertService.currentConcert`
         let concertId = concert.metadata.identifier;
+        let archiveUrl = `http://archive.org/details/${concertId}`;
+
         let cachedConcertObject = {
             title: concert.metadata.title,
             artist: concert.metadata.creator,
             description: concert.metadata.description,
             location: concert.metadata.coverage,
+            venue: concert.metadata.venue,
+            notes: concert.metadata.notes,
+            taper: concert.metadata.taper,
+            source: concert.metadata.source,
             date: concert.metadata.date,
-            year: concert.metadata.year,
+            archiveUrl: archiveUrl,
+
             concertId: concertId
         };
         //Add this concert to the ConcertService.currentConcert cache {}
@@ -46,7 +53,9 @@ let ArchiveOrgService = function ($log, $http, $state, ConcertService) {
     let parseSongListAndAddToCache = (unformattedSongArray, concert) => {
 
         //Create new array of only songs that are VBR MP3 format
-        let mp3Array = unformattedSongArray.filter(function(song){ return song.format === 'VBR MP3';});
+        let mp3Array = unformattedSongArray.filter(function(song){
+            return song.format === 'VBR MP3';
+        });
         let ArchiveOrgService = this;
 
         if (mp3Array.length){
@@ -63,7 +72,7 @@ let ArchiveOrgService = function ($log, $http, $state, ConcertService) {
     let parseArchiveOrgSong = (song, concert) => {
         $log.info('ArchiveOrgService#parseArchiveOrgSong');
 
-        let archiveUrl = concert.d1 + concert.dir + '/'+song.name;
+        let archiveUrl = `https://${concert.d1}${concert.dir}/${song.name}`;
         let concertId = concert.metadata.identifier;
 
         let songToSave = {
@@ -74,7 +83,10 @@ let ArchiveOrgService = function ($log, $http, $state, ConcertService) {
             length: song.length,
             file: song.name,
             concertId: concertId,
-            archiveUrl: archiveUrl
+            //@todo: figure out how to remove this requirement of having `url` for soundManager2, or at least have it be a custom property name
+            url: archiveUrl,
+            //@todo: figure out how to remove this requirement of having `id` for soundManager2
+            id: song.name
         };
 
         //Check if the song cache for this concertId has already been created in the concertSongs cache {}
