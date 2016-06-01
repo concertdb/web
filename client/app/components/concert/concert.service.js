@@ -8,15 +8,6 @@ let ConcertService = function ($log, $http) {
 
     //LocalCache interactions
     let setCurrentConcert = (concertObject) => {
-        // let basicConcertConfig = {
-        //     title: '',
-        //     artist: '',
-        //     description: '',
-        //     location: '',
-        //     date: '',
-        //     year: '',
-        //     concertId: ''
-        // };
         this.currentConcert[concertObject.concertId] = concertObject;
     };
     let getCurrentConcert = (concertId) => {
