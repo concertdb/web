@@ -1,7 +1,7 @@
-<!--<navbar></navbar>-->
+<navbar></navbar>
 
-<!--concertSearchForm-->
-<ng-form novalidate>
+<!--hidden concertSearchForm-->
+<ng-form novalidate class="concert-hidden-form">
     <input type="text" ng-model="vm.concertForm.artist" />
     <input type="text" ng-model="vm.concertForm.year" />
     <input type="submit" ng-click="vm.submitConcertSearchForm()">
@@ -14,34 +14,44 @@
 
 <div class="concert-page">
 
-    <!--concertSearchByYearButton-->
-    <div class="pre-built-searches">
-        <div ng-repeat="item in vm.bandsActiveYears"
-             class="gd-2016"
-             ng-click="vm.submitConcertSearchForm({artist: item.artist, year: item.year})">
+    <div class="pre-built-searches 3c">
+        <div class="artist-list-choice"
+             ng-show="vm.concertForm.artist === ''"
+             ng-repeat="item in vm.artistChoices"
+             ng-click="vm.setArtist(item.artist)">
+            {{ item.artist }}
+        </div>
+        <div class="year-list-choice"
+             ng-show="vm.concertForm.artist !== ''"
+             ng-repeat="item in vm.yearChoices"
+             ng-click="vm.setYear(item.year)">
             {{ item.year }}
         </div>
     </div>
-    <!--/concertSearchByYearButton-->
+    <!--/concertSearchByArtist-->
+
 
 
 
 
 
     <!--concertSearchResults-->
-    <ul>
-        <h3>Search Results</h3>
-        <li ng-show="!vm.searchResults.length">
-            No results to show.
-        </li>
-        <li class="concert-search-result-item"
-            ng-show="vm.searchResults.length"
-            ng-repeat="concert in vm.searchResults">
-            <a href="#" ng-click="vm.clickConcertFromIndex(concert.identifier)">
-                {{ concert.title }}
-            </a>
-        </li>
-    </ul>
+    <div>
+        <h3 ng-show="vm.searchResults.length">Search Results</h3>
+        <ul>
+            <!--<li ng-show="!vm.searchResults.length">-->
+                <!--No results to show.-->
+            <!--</li>-->
+            <li class="concert-search-result-item"
+                ng-show="vm.searchResults.length"
+                ng-repeat="concert in vm.searchResults">
+                <a href="#" ng-click="vm.clickConcertFromIndex(concert.identifier)">
+                    {{ concert.title }}
+                </a>
+            </li>
+        </ul>
+    </div>
+
     <!--/concertSearchResults-->
 
 </div>
@@ -50,4 +60,4 @@
 
 
 
-<!--<player></player>-->
+<player></player>
