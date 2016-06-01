@@ -14,45 +14,44 @@
 
 <div class="concert-page">
 
-    <div class="pre-built-searches 3c">
-        <div class="artist-list-choice"
-             ng-show="vm.concertForm.artist === ''"
-             ng-repeat="item in vm.artistChoices"
-             ng-click="vm.setArtist(item.artist)">
-            {{ item.artist }}
-        </div>
-        <div class="year-list-choice"
-             ng-show="vm.concertForm.artist !== ''"
-             ng-repeat="item in vm.yearChoices"
-             ng-click="vm.setYear(item.year)">
-            {{ item.year }}
-        </div>
+    <div layout="row" ng-cloak>
+        <md-sidenav layout="column" class="sidenav1" md-is-locked-open='true'>
+            <div class="pre-built-searches">
+                <div class="artist-list-choice"
+                     ng-show="vm.concertForm.artist === ''"
+                     ng-repeat="item in vm.artistChoices"
+                     ng-click="vm.setArtist(item.artist)">
+                    {{ item.artist }}
+                </div>
+                <div class="year-list-choice"
+                     ng-show="vm.concertForm.artist !== ''"
+                     ng-repeat="item in vm.yearChoices"
+                     ng-click="vm.setYear(item.year)">
+                    {{ item.year }}
+                </div>
+            </div>
+        </md-sidenav>
+
+        <md-content flex layout="column">
+            <!--concertSearchResults-->
+            <div>
+                <h3 ng-show="vm.searchResults.length">Search Results</h3>
+                <ul>
+                    <!--<li ng-show="!vm.searchResults.length">-->
+                    <!--No results to show.-->
+                    <!--</li>-->
+                    <li class="concert-search-result-item"
+                        ng-show="vm.searchResults.length"
+                        ng-repeat="concert in vm.searchResults">
+                        <a href="#" ng-click="vm.clickConcertFromIndex(concert.identifier)">
+                            {{ concert.title }}
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!--/concertSearchResults-->
+        </md-content>
     </div>
-    <!--/concertSearchByArtist-->
-
-
-
-
-
-
-    <!--concertSearchResults-->
-    <div>
-        <h3 ng-show="vm.searchResults.length">Search Results</h3>
-        <ul>
-            <!--<li ng-show="!vm.searchResults.length">-->
-                <!--No results to show.-->
-            <!--</li>-->
-            <li class="concert-search-result-item"
-                ng-show="vm.searchResults.length"
-                ng-repeat="concert in vm.searchResults">
-                <a href="#" ng-click="vm.clickConcertFromIndex(concert.identifier)">
-                    {{ concert.title }}
-                </a>
-            </li>
-        </ul>
-    </div>
-
-    <!--/concertSearchResults-->
 
 </div>
 

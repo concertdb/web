@@ -79,7 +79,7 @@ function concertController($log, $http, $state, ArchiveOrgService, ConcertServic
         },
         {
             year: '2000'
-        },
+        }
     ];
 
     vm.setArtist = function(artist){
@@ -123,13 +123,13 @@ function concertController($log, $http, $state, ArchiveOrgService, ConcertServic
             });
     };
 
-    vm.clickConcertYear = function(artist, year) {
-        let clickedParams = {
-            artist: artist,
-            year: year
-        };
-        vm.submitConcertSearchForm(clickedParams);
-    };
+    // vm.clickConcertYear = function(artist, year) {
+    //     let clickedParams = {
+    //         artist: artist,
+    //         year: year
+    //     };
+    //     vm.submitConcertSearchForm(clickedParams);
+    // };
 
     //@todo: after working out the data flow. Will remove and hook front-end buttons onto $stateParams.
 
