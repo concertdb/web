@@ -3,28 +3,33 @@
   .concert-song-list {
     margin-left: 20px;
   }
+
   .song-row {
     background_color: #027353;
     color: #ffffff;
   }
   .artist-list-choice {
-    height: 40px;
+    height: 30px;
+    padding-top: 10px;
+    padding-left: 10px;
     background-color: #004444;
     color: #FFFFFF;
-    font-size: 2.0em;
+    font-size: 1.6em;
     border: 1px solid white;
   }
   .year-list-choice {
-    height: 20px;
+    height: 25px;
+    padding-top: 10px;
+    padding-left: 10px;
     background-color: darkgreen;
     color: #FFFFFF;
-    font-size: 16px;
+    font-size: 14px;
     border: 1px solid white;
   }
 
   .concert-search-result-item {
-    height: 40px;
-    padding-top: 20px;
+    height: 30px;
+    padding-top: 10px;
     padding-left: 20px;
     background-color: #7da3a1;
     color: #FFFFFF;
@@ -34,10 +39,19 @@
   .concert-search-result-item:hover {
     background-color: #004444;
   }
-  .search-results {
-    height: 500px;
+  .main-content {
+    height: 550px;
   }
 
+  .search-results {
+    max-height:70%;
+    flex:1 1 70%;
+  }
+  .player-container {
+    height:30%;
+    max-height:30%;
+    flex:1 1 30%;
+  }
   .concert-link {
     text-decoration: none;
     color: #FFFFFF;
