@@ -38,17 +38,17 @@
             <!--concertSearchResults-->
             <div class="search-results">
                 <h1 class="search-results-year-header" ng-show="vm.searchResults.length">{{ vm.currentYear }}</h1>
-                <ul>
+                <md-list flex>
                     <!--</li>-->
-                    <div class="concert-search-result-item"
+                    <md-list-item class="md-title concert-search-result-item"
                         ng-show="vm.searchResults.length"
                         ng-repeat="concert in vm.searchResults"
                         ng-click="vm.clickConcertFromIndex(concert.identifier)">
                         <a class="concert-link" href="#">
                             {{ concert.title }}
                         </a>
-                    </div>
-                </ul>
+                    </md-list-item>
+                </md-list>
             </div>
             <!--/concertSearchResults-->
 

@@ -54,7 +54,7 @@
                 </div>
                 <!--concertSongList-->
                 <ul class ="concert-song-list">
-                    <li ng-repeat="song in vm.concertSongs | orderBy: 'track'">
+                    <li ng-repeat="song in vm.concertSongs | orderBy: 'file'">
                         <div class="song-row">
                             {{song.track}} - {{song.title}} - {{song.length}}
                             <button music-player add-song="song">
