@@ -30,11 +30,11 @@
                         <div class="seekLoad" ng-style="{width : ( progress + '%' ) }"></div>
                     </div>
                     <div layout="column" >
-                        <span layout="column" layout-align="start center">
-                            {{ currentPlaying.title }} - {{ currentPlaying.artist }}
-                        </span>
                         <span layout="row" layout-align="end center">
                             ({{ currentPostion }} / {{ currentDuration }})
+                        </span>
+                        <span layout="column" layout-align="start center">
+                            <h4>{{ currentPlaying.title }} - {{ currentPlaying.artist }}</h4>
                         </span>
                     </div>
 
