@@ -77,15 +77,21 @@ function SidebarController($rootScope, $log, $stateParams, ConcertService, Archi
                 year: '2000'
             }
         ];
+        vm.showArtistChoices = false;
     }
     init();
 
     vm.setArtist = function(artist){
         ConcertService.current.artist.name = artist;
+        vm.currentArtist = ConcertService.current.artist.name;
+        vm.showArtistChoices = !vm.showArtistChoices;
     };
     vm.setYear = function(year){
         ConcertService.current.year.name = year;
         vm.searchForConcert(year);
+    };
+    vm.showArtistList = function(){
+        vm.showArtistChoices = !vm.showArtistChoices;
     };
     vm.searchForConcert = function(year){
 
