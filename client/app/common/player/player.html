@@ -11,20 +11,22 @@
                 <div class="playlist-container">
                     <div class="playlist-header" layout="row">
                         <span class="md-subhead"> Playlist </span>
-                        <span layout="row" layout-align="end center">
+                        <li layout="row" layout-align="end center">
                             <i class="material-icons player-button" repeat-music>repeat</i>
                             <i class="material-icons player-button" clear-playlist>clear</i>
-                        </span>
+                        </li>
                     </div>
 
-                    <div ng-repeat="song in playlist">
-                        <a play-from-playlist="song">{{ song.title }}</a>
-                        -
-                        <a remove-from-playlist="song" data-index="{{$index}}">
-                            <small>(remove)</small>
-                        </a>
-                        <span ng-if="currentPlaying.id == song.id"> - (current)</span>
-                    </div>
+                    <ol class="playlist">
+                        <li class="playlist" ng-repeat="song in playlist">
+                            <a play-from-playlist="song">{{ song.title }}</a>
+                            -
+                            <a remove-from-playlist="song" data-index="{{$index}}">
+                                <small>(remove)</small>
+                            </a>
+                            <span ng-if="currentPlaying.id == song.id"> - (current)</span>
+                        </li>
+                    </ol>
                 </div>
                 <!--/playlist-->
             </div>
