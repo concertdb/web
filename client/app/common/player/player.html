@@ -1,42 +1,49 @@
 <div class="player">
 
-    <sound-manager></sound-manager>
+    <div class="player-container">
+        <sound-manager></sound-manager>
 
+        <div layout="row"
+             layout-xs="column"
+             layout-align="center">
+            <div flex="15">
+                <!--playlist-->
+                <h4>Playlist</h4>
+                <ul>
+                    <li ng-repeat="song in playlist">
+                        <a play-from-playlist="song">{{ song.title }}</a>
+                        -
+                        <a remove-from-playlist="song" data-index="{{$index}}">
+                            <small>(remove)</small>
+                        </a>
+                        <span ng-if="currentPlaying.id == song.id"> - (current)</span>
+                    </li>
+                </ul>
+                <i class="material-icons repeat" repeat-music>repeat</i>
+                <i class="material-icons" clear-playlist>clear</i>
+                <!--/playlist-->
+            </div>
+            <div flex="70">
 
-    <div class=playlist-container">
-        <!--playlist-->
-        <h4>Playlist</h4>
-        <ul>
-            <li ng-repeat="song in playlist">
-                <a play-from-playlist="song">{{ song.title }}</a>
-                -
-                <a remove-from-playlist="song" data-index="{{$index}}">
-                    <small>(remove)</small>
-                </a>
-                <span ng-if="currentPlaying.id == song.id"> - (current)</span>
-            </li>
-        </ul>
-        <i class="material-icons repeat" repeat-music>repeat</i>
-        <i class="material-icons" clear-playlist>clear</i>
-        <!--/playlist-->
-    </div>
-
-
-    <div class="player-controls">
-        <p>
-            Currently Playing: {{ currentPlaying.title }} by {{ currentPlaying.creator }} ({{ currentPostion }} / {{ currentDuration }})
-        </p>
-        <div class="seekBase" seek-track>
-            <div class="seekLoad" ng-style="{width : ( progress + '%' ) }"></div>
+                <div class="player-controls" layout="column">
+                    <div class="seekBase" seek-track>
+                        <div class="seekLoad" ng-style="{width : ( progress + '%' ) }"></div>
+                    </div>
+                    <p>
+                        Currently Playing: {{ currentPlaying.title }} by {{ currentPlaying.creator }} ({{ currentPostion }} / {{ currentDuration }})
+                    </p>
+                </div>
+            </div>
+            <div flex="15">
+                <div layout="row" layout-align="center center" class="player-buttons">
+                    <i class="material-icons" prev-track>fast_rewind</i>
+                    <i class="material-icons" play-music>play_circle_outline</i>
+                    <i class="material-icons" pause-music>pause</i>
+                    <i class="material-icons" next-track>fast_forward</i>
+                </div>
+            </div>
         </div>
-        <span class="player-buttons">
-            <i class="material-icons" prev-track>fast_rewind</i>
-            <i class="material-icons" play-music>play_circle_outline</i>
-            <i class="material-icons" pause-music>pause</i>
-            <i class="material-icons" next-track>fast_forward</i>
-        </span>
+
     </div>
-
-
 
 </div>
