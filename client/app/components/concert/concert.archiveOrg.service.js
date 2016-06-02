@@ -25,7 +25,8 @@ let ArchiveOrgService = function ($log, $http, $state, ConcertService) {
         $log.info('ArchiveOrgService#parseArchiveOrgConcert');
 
         //Construct the "currentConcert" object to be "stored" in `ConcertService.currentConcert`
-        let concertId = concert.metadata.identifier;
+        //@todo: concertId manipulation. Figure out different way to get unique id for concert. This was done to prevent issue #XXXX.
+        let concertId = concert.metadata.identifier.replace(/([^a-z0-9]+)/gi, '');
         let archiveUrl = `http://archive.org/details/${concertId}`;
 
         let cachedConcertObject = {
@@ -73,7 +74,8 @@ let ArchiveOrgService = function ($log, $http, $state, ConcertService) {
         $log.info('ArchiveOrgService#parseArchiveOrgSong');
 
         let archiveUrl = `https://${concert.d1}${concert.dir}/${song.name}`;
-        let concertId = concert.metadata.identifier;
+        //@todo: concertId manipulation. Figure out different way to get unique id for concert. This was done to prevent issue #XXXX.
+        let concertId = concert.metadata.identifier.replace(/([^a-z0-9]+)/gi, '');
 
         let songToSave = {
             title: song.title,
