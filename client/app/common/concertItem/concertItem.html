@@ -1,22 +1,7 @@
 <navbar></navbar>
 
 <div class="concert-item-container" layout="row" ng-cloak>
-    <!--<md-sidenav layout="column" class="sidenav1" md-is-locked-open='true'>-->
-        <!--<div class="pre-built-searches">-->
-            <!--<div class="artist-list-choice"-->
-                 <!--ng-show="vm.concertForm.artist === ''"-->
-                 <!--ng-repeat="item in vm.artistChoices"-->
-                 <!--ng-click="vm.setArtist(item.artist)">-->
-                <!--{{ item.artist }}-->
-            <!--</div>-->
-            <!--<div class="year-list-choice"-->
-                 <!--ng-show="vm.concertForm.artist !== ''"-->
-                 <!--ng-repeat="item in vm.yearChoices"-->
-                 <!--ng-click="vm.setYear(item.year)">-->
-                <!--{{ item.year }}-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</md-sidenav>-->
+
     <sidebar></sidebar>
 
     <md-content flex layout="column">
@@ -37,47 +22,28 @@
                         {{ vm.currentConcert.venue }}
                     </div>
                     <div class="concert-details">
-                        <div class="md-button">
-                            View Info
-                        </div>
-                    </div>
-                    <div class="more-info">
-                        <h4>
-                            <a href="{{vm.currentConcert.archiveUrl}}" target="_blank">Archive Link</a>
-                        </h4>
-                        <h4>Description</h4>
-                        <p>
-                            {{ vm.currentConcert.description }}
-                        </p>
-                        <h4>Notes</h4>
-                        <p>
-                            {{ vm.currentConcert.notes }}
-                        </p>
-                        <h4>Source</h4>
-                        <p>
-                            {{ vm.currentConcert.source }}
-                        </p>
-                        <h4>Taper</h4>
-                        <p>
-                            {{ vm.currentConcert.taper }}
-                        </p>
+                            <a class="md-button" href="{{vm.currentConcert.archiveUrl}}" target="_blank">Archive Link</a>
                     </div>
 
                 </div>
                 <!--concertSongList-->
-                <md-list flex class="concert-song-list">
 
-                    <md-list-item
-                        ng-repeat="song in vm.concertSongs | orderBy: 'file'" class="song-row" >
-                            <div class="song-container" layout="row" layout-align="start center" music-player add-song="song">
+                <div class="concert-song-list-container">
+                    <md-list flex class="concert-song-list">
+
+                        <md-list-item
+                            ng-repeat="song in vm.concertSongs | orderBy: 'file'" class="song-row" >
+                            <div class="song-container" layout="row" layout-align="center center" music-player="play" add-song="song">
                                 <a href="#" class="add-to-playlist-link" >
                                     {{song.track}} - {{song.title}} - {{song.length}}
                                 </a>
                             </div>
 
-                    </md-list-item>
+                        </md-list-item>
 
-                </md-list>
+                    </md-list>
+                </div>
+
                 <!--/concertSongList-->
             </div>
         </div>
