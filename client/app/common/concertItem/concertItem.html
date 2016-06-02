@@ -7,7 +7,7 @@
     <md-content flex layout="column">
         <div class="concert-info">
             <div class="concert-item">
-                <h1 class="concert-details-error"
+                <h1 layout="row" layout-align="center end" class="concert-details-error"
                     ng-if="vm.noConcertFound">
                     NO CONCERT FOUND
                 </h1>
@@ -30,7 +30,7 @@
                         <md-list-item
                             class="song-row"
                             ng-repeat="song in vm.concertSongs | orderBy: 'file'">
-                            <div class="song-container" layout="row" layout-align="center center" music-player="play" add-song="song">
+                            <div class="song-container" music-player="play" add-song="song">
                                 <a href="#" class="add-to-playlist-link" >
                                     {{::song.track || 'NA'}} - {{::song.title || 'No Title Available'}} - {{::song.length}}
                                 </a>
