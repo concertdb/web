@@ -1,11 +1,11 @@
 <navbar></navbar>
 
 <!--hidden concertSearchForm-->
-<ng-form novalidate class="concert-hidden-form">
-    <input type="text" ng-model="vm.concertForm.artist" />
-    <input type="text" ng-model="vm.concertForm.year" />
-    <input type="submit" ng-click="vm.submitConcertSearchForm()">
-</ng-form>
+<!--<ng-form novalidate class="concert-hidden-form">-->
+    <!--<input type="text" ng-model="vm.concertForm.artist" />-->
+    <!--<input type="text" ng-model="vm.concertForm.year" />-->
+    <!--<input type="submit" ng-click="vm.submitConcertSearchForm()">-->
+<!--</ng-form>-->
 <!--/concertSearchForm-->
 
 
@@ -15,33 +15,33 @@
 <div class="concert-page">
 
     <div layout="row" ng-cloak>
-        <md-sidenav layout="column" class="sidenav1" md-is-locked-open='true'>
-            <div class="pre-built-searches">
-                <div class="artist-list-choice" ng-show="vm.concertForm.artist !== ''">
-                    {{ vm.currentArtist }}
-                </div>
-                <div class="artist-list-choice"
-                     ng-show="vm.concertForm.artist === ''"
-                     ng-repeat="item in vm.artistChoices"
-                     ng-click="vm.setArtist(item.artist)">
-                    {{ item.artist }}
-                </div>
-                <div class="year-list-choice"
-                     ng-repeat="item in vm.yearChoices"
-                     ng-click="vm.setYear(item.year)">
-                    {{ item.year }}
-                </div>
-            </div>
-        </md-sidenav>
+        <!--<md-sidenav layout="column" class="sidenav1" md-is-locked-open='true'>-->
+            <!--<sidebar></sidebar>-->
+            <!--<div class="pre-built-searches">-->
+                <!--<div class="artist-list-choice" ng-show="vm.concertForm.artist !== ''">-->
+                    <!--{{ vm.currentArtist }}-->
+                <!--</div>-->
+                <!--<div class="artist-list-choice"-->
+                     <!--ng-show="vm.concertForm.artist === ''"-->
+                     <!--ng-repeat="item in vm.artistChoices"-->
+                     <!--ng-click="vm.setArtist(item.artist)">-->
+                    <!--{{ item.artist }}-->
+                <!--</div>-->
+                <!--<div class="year-list-choice"-->
+                     <!--ng-repeat="item in vm.yearChoices"-->
+                     <!--ng-click="vm.setYear(item.year)">-->
+                    <!--{{ item.year }}-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</md-sidenav>-->
+        <sidebar></sidebar>
 
         <md-content flex layout="column" class="main-content">
             <!--concertSearchResults-->
             <div class="search-results">
                 <h1 class="search-results-year-header" ng-show="vm.searchResults.length">{{ vm.currentYear }}</h1>
                 <md-list flex>
-                    <!--</li>-->
                     <md-list-item class="md-title concert-search-result-item"
-                        ng-show="vm.searchResults.length"
                         ng-repeat="concert in vm.searchResults"
                         ng-click="vm.clickConcertFromIndex(concert.identifier)">
                         <a class="concert-link" href="#">
