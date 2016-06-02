@@ -1,4 +1,4 @@
-<div class="player">
+<div class="player" ng-show="vm.showSoundBar">
 
     <div class="player-container">
         <sound-manager></sound-manager>
@@ -8,19 +8,24 @@
              layout-align="center">
             <div flex="20">
                 <!--playlist-->
-                <h4>Playlist</h4>
-                <ul>
-                    <li ng-repeat="song in playlist">
+                <div class="playlist-container">
+                    <div class="playlist-header" layout="row">
+                        <span class="md-subhead"> Playlist </span>
+                        <span layout="row" layout-align="end center">
+                            <i class="material-icons player-button" repeat-music>repeat</i>
+                            <i class="material-icons player-button" clear-playlist>clear</i>
+                        </span>
+                    </div>
+
+                    <div ng-repeat="song in playlist">
                         <a play-from-playlist="song">{{ song.title }}</a>
                         -
                         <a remove-from-playlist="song" data-index="{{$index}}">
                             <small>(remove)</small>
                         </a>
                         <span ng-if="currentPlaying.id == song.id"> - (current)</span>
-                    </li>
-                </ul>
-                <i class="material-icons repeat" repeat-music>repeat</i>
-                <i class="material-icons" clear-playlist>clear</i>
+                    </div>
+                </div>
                 <!--/playlist-->
             </div>
             <div flex="65">
@@ -34,7 +39,7 @@
                             ({{ currentPostion }} / {{ currentDuration }})
                         </span>
                         <span layout="column" layout-align="start center">
-                            <h4>{{ currentPlaying.title }} - {{ currentPlaying.artist }}</h4>
+                            <h3 class="currently-playing">{{ currentPlaying.title }} - {{ currentPlaying.album }}</h3>
                         </span>
                     </div>
 
@@ -43,8 +48,14 @@
             <div flex="15">
                 <div layout="row" layout-align="center center" class="player-buttons">
                     <i class="material-icons" prev-track>fast_rewind</i>
-                    <i class="material-icons" play-music>play_arrow</i>
-                    <i class="material-icons" pause-music>pause</i>
+                    <!--isPlaying is exposed by soundmanager2 directly on the $scope-->
+                    <i class="material-icons"
+                       ng-show="!isPlaying"
+                       play-music>play_arrow</i>
+                    <!--isPlaying is exposed by soundmanager2 directly on the $scope-->
+                    <i class="material-icons"
+                       ng-show="isPlaying"
+                       pause-music>pause</i>
                     <i class="material-icons" next-track>fast_forward</i>
                 </div>
             </div>
