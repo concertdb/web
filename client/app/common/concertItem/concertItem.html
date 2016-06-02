@@ -1,6 +1,6 @@
 <navbar></navbar>
 
-<div layout="row" ng-cloak>
+<div class="concert-item-container" layout="row" ng-cloak>
     <!--<md-sidenav layout="column" class="sidenav1" md-is-locked-open='true'>-->
         <!--<div class="pre-built-searches">-->
             <!--<div class="artist-list-choice"-->
@@ -68,9 +68,9 @@
                 <md-list flex class="concert-song-list">
 
                     <md-list-item
-                        ng-repeat="song in vm.concertSongs | orderBy: 'file'" class="song-row">
-                            <div music-player add-song="song">
-                                <a href="#" class="add-to-playlist-link">
+                        ng-repeat="song in vm.concertSongs | orderBy: 'file'" class="song-row" >
+                            <div class="song-container" layout="row" layout-align="start center" music-player add-song="song">
+                                <a href="#" class="add-to-playlist-link" >
                                     {{song.track}} - {{song.title}} - {{song.length}}
                                 </a>
                             </div>
