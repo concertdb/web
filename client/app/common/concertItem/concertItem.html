@@ -1,51 +1,60 @@
 <navbar></navbar>
 
-<div class="concert-item-container" layout="row" ng-cloak>
+<div flex layout="row">
 
-    <sidebar></sidebar>
+    <sidebar flex="25"></sidebar>
 
-    <md-content flex layout="column">
-        <div class="concert-info">
-            <div class="concert-item">
-                <h1 layout="row" layout-align="center end" class="concert-details-error"
-                    ng-if="vm.noConcertFound">
-                    NO CONCERT FOUND
-                </h1>
-                <div class="concert-details-container"
-                     ng-if="!vm.noConcertFound">
-                    <div class="concert-details-header">
-                        <div class="md-headline concert-details">{{ vm.currentConcert.title }}</div>
-                    </div>
-
-                    <div class="concert-details">
-                            <a class="md-button" href="{{vm.currentConcert.archiveUrl}}" target="_blank">Archive Link</a>
-                    </div>
-
-                </div>
-                <!--concertSongList-->
-
-                <div class="concert-song-list-container">
-                    <md-list flex class="concert-song-list">
-
-                        <md-list-item
-                            class="song-row"
-                            ng-repeat="song in vm.concertSongs | orderBy: 'file'">
-                            <div class="song-container" music-player="play" add-song="song">
-                                <a href="#" class="add-to-playlist-link" >
-                                    {{::song.track || 'NA'}} - {{::song.title || 'No Title Available'}} - {{::song.length}}
-                                </a>
+    <div layout="column" flex>
+        <div class="flex-primary-content">
+            <md-content flex layout="column">
+                <div class="concert-info">
+                    <div class="concert-item">
+                        <h1 layout="row" layout-align="center end" class="concert-details-error"
+                            ng-if="vm.noConcertFound">
+                            NO CONCERT FOUND
+                        </h1>
+                        <div class="concert-details-container"
+                             ng-if="!vm.noConcertFound">
+                            <div class="concert-details-header">
+                                <div class="md-headline concert-details">{{ vm.currentConcert.title }}</div>
                             </div>
 
-                        </md-list-item>
+                            <div class="concert-details">
+                                <a class="md-button" href="{{vm.currentConcert.archiveUrl}}" target="_blank">Archive Link</a>
+                            </div>
 
-                    </md-list>
+                        </div>
+                        <!--concertSongList-->
+
+                        <div class="concert-song-list-container" flex layout="column">
+                            <md-list class="concert-song-list">
+
+                                <md-list-item
+                                    class="song-row"
+                                    ng-repeat="song in vm.concertSongs | orderBy: 'file'">
+                                    <div class="song-container" music-player="play" add-song="song">
+                                        <a href="#" class="add-to-playlist-link" >
+                                            {{::song.track || 'NA'}} - {{::song.title || 'No Title Available'}} - {{::song.length}}
+                                        </a>
+                                    </div>
+
+                                </md-list-item>
+
+                            </md-list>
+                        </div>
+
+                        <!--/concertSongList-->
+                    </div>
                 </div>
-
-                <!--/concertSongList-->
-            </div>
+            </md-content>
         </div>
-        <player></player>
-    </md-content>
+        <div class="flex-fixed-spacing">
+            Test
+        </div>
+
+        <player class="flex-player"></player>
+    </div>
+
 </div>
 
 
