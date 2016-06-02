@@ -8,19 +8,18 @@
         <div class="concert-info">
             <div class="concert-item">
                 <div>
-                    <h2 class="md-display-1 concert-details">{{ vm.currentConcert.date }}</h2>
-                    <!--<a href="{{vm.archive_url}}" target="_blank"></a>-->
+                    <div class="md-headline concert-details">{{ vm.currentConcert.title }}</div>
                 </div>
                 <div class="concert-details-container">
-                    <h3 class="md-title concert-details">
-                        {{ vm.currentConcert.artist }}
-                    </h3>
-                    <div class="md-subhead concert-details">
-                        {{ vm.currentConcert.location }}
-                    </div>
-                    <div class="md-subhead concert-details">
-                        {{ vm.currentConcert.venue }}
-                    </div>
+                    <!--<h3 class="md-title concert-details">-->
+                        <!--{{ vm.currentConcert.artist }}-->
+                    <!--</h3>-->
+                    <!--<div class="md-subhead concert-details">-->
+                        <!--{{ vm.currentConcert.location }}-->
+                    <!--</div>-->
+                    <!--<div class="md-subhead concert-details">-->
+                        <!--{{ vm.currentConcert.venue }}-->
+                    <!--</div>-->
                     <div class="concert-details">
                             <a class="md-button" href="{{vm.currentConcert.archiveUrl}}" target="_blank">Archive Link</a>
                     </div>
@@ -47,10 +46,10 @@
                 <!--/concertSongList-->
             </div>
         </div>
-
+        <player></player>
     </md-content>
 </div>
 
-<player></player>
+
 
 
