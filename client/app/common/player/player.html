@@ -6,7 +6,7 @@
         <div layout="row"
              layout-xs="column"
              layout-align="center">
-            <div flex="15">
+            <div flex="20">
                 <!--playlist-->
                 <h4>Playlist</h4>
                 <ul>
@@ -23,21 +23,27 @@
                 <i class="material-icons" clear-playlist>clear</i>
                 <!--/playlist-->
             </div>
-            <div flex="70">
+            <div flex="65">
 
                 <div class="player-controls" layout="column">
                     <div class="seekBase" seek-track>
                         <div class="seekLoad" ng-style="{width : ( progress + '%' ) }"></div>
                     </div>
-                    <p>
-                        Currently Playing: {{ currentPlaying.title }} by {{ currentPlaying.creator }} ({{ currentPostion }} / {{ currentDuration }})
-                    </p>
+                    <div layout="column" >
+                        <span layout="row" layout-align="end center">
+                            ({{ currentPostion }} / {{ currentDuration }})
+                        </span>
+                        <span layout="column" layout-align="start center">
+                            <h4>{{ currentPlaying.title }} - {{ currentPlaying.artist }}</h4>
+                        </span>
+                    </div>
+
                 </div>
             </div>
             <div flex="15">
                 <div layout="row" layout-align="center center" class="player-buttons">
                     <i class="material-icons" prev-track>fast_rewind</i>
-                    <i class="material-icons" play-music>play_circle_outline</i>
+                    <i class="material-icons" play-music>play_arrow</i>
                     <i class="material-icons" pause-music>pause</i>
                     <i class="material-icons" next-track>fast_forward</i>
                 </div>

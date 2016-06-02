@@ -6,10 +6,10 @@
 
         <sidebar></sidebar>
 
-        <md-content flex layout="column" class="main-content">
+        <md-content flex layout="column">
             <!--concertSearchResults-->
+            <h1 class="search-results-year-header md-display-1" ng-show="vm.searchResults.length">{{ vm.currentYear }}</h1>
             <div class="search-results">
-                <h1 class="search-results-year-header md-display-1" ng-show="vm.searchResults.length">{{ vm.currentYear }}</h1>
                 <md-list flex>
                     <md-list-item class="md-title concert-search-result-item"
                         ng-repeat="concert in vm.searchResults"
@@ -21,11 +21,9 @@
                 </md-list>
             </div>
             <!--/concertSearchResults-->
-
         </md-content>
     </div>
-    <player class="player"></player>
-
+<player class="player"></player>
 </div>
 
 

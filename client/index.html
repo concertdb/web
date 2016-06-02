@@ -7,18 +7,20 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="description" content="NG6-Starter by @AngularClass">
+    <meta name="description" content="Concert DB">
     <link rel="icon" href="data:;base64,iVBORw0KGgo=">
       <!--@todo: Webpack. Add Google Material via npm -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
     <base href="/">
   </head>
-  <body ng-app="app" ng-strict-di ng-cloak>
 
-    <app>
-      Loading...
-    </app>
+  <body ng-app="app" ng-strict-di ng-cloak>
+    <div layout="column" class="app-container" flex="nogrow">
+        <app>
+          Loading...
+        </app>
+    </div>
 
     <!-- Google Analytics: change UA-71073175-2 to be your site's ID -->
     <!--<script>-->
@@ -30,4 +32,5 @@
       <!--ga('send', 'pageview');-->
     <!--</script>-->
   </body>
+
 </html>
