@@ -22,9 +22,12 @@ function concertController($rootScope, $log, $http, $state, $stateParams, Archiv
 
 
     // component interaction methods
-    vm.clickConcertFromIndex = function(concertId) {
+    vm.clickConcertFromIndex = function(concertIdentifier) {
+        //@todo: concertId manipulation. Figure out different way to get unique id for concert. This was done to prevent issue #XXXX.
+        let concertId = concertIdentifier.replace(/([^a-z0-9]+)/gi, '');
+
         // Use the getConcertById method to query archive.org's db for the concert
-        ArchiveOrgService.getConcertById(concertId)
+        ArchiveOrgService.getConcertById(concertIdentifier)
             .then(function(data){
 
                 //return the concert object recieved back from archive.org

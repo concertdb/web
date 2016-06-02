@@ -7,19 +7,16 @@
     <md-content flex layout="column">
         <div class="concert-info">
             <div class="concert-item">
-                <div>
-                    <div class="md-headline concert-details">{{ vm.currentConcert.title }}</div>
-                </div>
-                <div class="concert-details-container">
-                    <!--<h3 class="md-title concert-details">-->
-                        <!--{{ vm.currentConcert.artist }}-->
-                    <!--</h3>-->
-                    <!--<div class="md-subhead concert-details">-->
-                        <!--{{ vm.currentConcert.location }}-->
-                    <!--</div>-->
-                    <!--<div class="md-subhead concert-details">-->
-                        <!--{{ vm.currentConcert.venue }}-->
-                    <!--</div>-->
+                <h1 class="concert-details-error"
+                    ng-if="vm.noConcertFound">
+                    NO CONCERT FOUND
+                </h1>
+                <div class="concert-details-container"
+                     ng-if="!vm.noConcertFound">
+                    <div class="concert-details-header">
+                        <div class="md-headline concert-details">{{ vm.currentConcert.title }}</div>
+                    </div>
+
                     <div class="concert-details">
                             <a class="md-button" href="{{vm.currentConcert.archiveUrl}}" target="_blank">Archive Link</a>
                     </div>
@@ -31,10 +28,11 @@
                     <md-list flex class="concert-song-list">
 
                         <md-list-item
-                            ng-repeat="song in vm.concertSongs | orderBy: 'file'" class="song-row" >
+                            class="song-row"
+                            ng-repeat="song in vm.concertSongs | orderBy: 'file'">
                             <div class="song-container" layout="row" layout-align="center center" music-player="play" add-song="song">
                                 <a href="#" class="add-to-playlist-link" >
-                                    {{song.track}} - {{song.title}} - {{song.length}}
+                                    {{::song.track || 'NA'}} - {{::song.title || 'No Title Available'}} - {{::song.length}}
                                 </a>
                             </div>
 
