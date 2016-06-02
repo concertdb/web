@@ -7,6 +7,23 @@ import ConcertService from './concert.service';
 let concertModule = angular.module('concert', [
     uiRouter
 ])
+// .run(function($rootScope, ConcertService){
+//     "ngInject";
+//     debugger;
+//     $rootScope.$on('$locationChangeStart', function(){
+//         debugger;
+//     });
+//     $rootScope.$on('$stateChangeStart', function(){
+//         debugger;
+//     });
+//     $rootScope.$on('$stateChangeError', function (event, toState, toParams, fromState, fromParams, error) {
+//         debugger;
+//         if(toState.name == 'Categories')
+//         {
+//             // Do Something
+//         }
+//     });
+// })
 
 .config(($stateProvider, $urlRouterProvider) => {
     "ngInject";
@@ -25,7 +42,20 @@ let concertModule = angular.module('concert', [
         })
         .state('concert.show', {
             url: '/:id',
-            template: '<concert-item></concert-item>'
+            template: '<concert-item></concert-item>',
+            // resolve: {
+            //     concertSongs: function($state, $stateParams, ConcertService){
+            //
+            //         var concertSongs = ConcertService.concertSongs[$stateParams.id];
+            //         debugger;
+            //         if (concertSongs){
+            //             return concertSongs;
+            //         } else {
+            //             $state.go('concert.index');
+            //
+            //         }
+            //     }
+            // }
         });
 })
 .service('ArchiveOrgService', ArchiveOrgService)

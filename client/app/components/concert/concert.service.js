@@ -58,6 +58,16 @@ let ConcertService = function ($log, $http) {
     this.currentConcert = {};
     this.searchResults = [];
 
+    this.current = {
+        artist: {
+            name: 'String Cheese Incident'
+        },
+        year: {
+            name: '2016'
+        },
+        searchResults: []
+    };
+
     //Service methods
     this.getConcertFromDb = getConcertFromDb;
     // this.parseArchiveOrgConcert = parseArchiveOrgConcert;
