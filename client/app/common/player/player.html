@@ -17,16 +17,23 @@
                         </li>
                     </div>
 
-                    <ol class="playlist">
-                        <li class="playlist" ng-repeat="song in playlist">
-                            <a play-from-playlist="song">{{ song.title }}</a>
-                            -
-                            <a remove-from-playlist="song" data-index="{{$index}}">
-                                <small>(remove)</small>
-                            </a>
-                            <span ng-if="currentPlaying.id == song.id"> - (current)</span>
-                        </li>
-                    </ol>
+
+                        <div layout="column">
+                            <div class="playlist-song" ng-repeat="song in playlist">
+                                <div layout="row">
+                                <div flex="80">
+                                    <a play-from-playlist="song">{{ song.title }}</a>
+                                    <span ng-if="currentPlaying.id == song.id">(current)</span>
+                                </div>
+                                <div flex="20">
+                                    <a remove-from-playlist="song" data-index="{{$index}}">
+                                        <small>X</small>
+                                    </a>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+
                 </div>
                 <!--/playlist-->
             </div>
