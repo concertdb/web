@@ -1,9 +1,9 @@
 {
-  "name": "concertdb-ui",
+  "name": "concertdb-web",
   "version": "0.0.1",
   "description": "Concert DB. Helping you keep track of your musical identity.",
   "private": true,
-  "main": "index.js",
+  "main": "client/app/app.js",
   "dependencies": {
     "angular": "^1.5.0",
     "angular-animate": "^1.5.5",
@@ -11,6 +11,7 @@
     "angular-material": "^1.1.0-rc4-master-06e7e99",
     "angular-soundmanager2": "git+ssh://git@github.com/perminder-klair/angular-soundmanager2#c91f7bd9f2f201ae9a62439fbdd289de1da621a7",
     "angular-ui-router": "^0.2.15",
+    "express": "^4.13.4",
     "normalize.css": "^3.0.3"
   },
   "devDependencies": {
@@ -58,7 +59,9 @@
   },
   "scripts": {
     "test": "karma start",
-    "start": "gulp serve"
+    "start": "gulp serve",
+    "build": "gulp webpack",
+    "smoketest": "gulp webpack && node server.js"
   },
   "keywords": [
     "concerts",
@@ -67,7 +70,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/angularclass/NG6-starter.git"
+    "url": "https://github.com/concertdb/web.git"
   },
   "author": "Matthew Vilhauer <matthew.vilhauer@gmail.com> (http://github.com/matthewvilhauer)",
   "contributors": [

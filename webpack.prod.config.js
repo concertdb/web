@@ -4,13 +4,14 @@ var config = require('./webpack.config');
 
 config.output = {
     filename: '[name].bundle.js',
-    publicPath: '',
-    path: path.resolve(__dirname, 'dist')
+    publicPath: '/public',
+    path: path.resolve(__dirname, 'public')
 };
 
 config.plugins = config.plugins.concat([
 
     // Reduces bundles total size
+    new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin({
         mangle: {
 
@@ -19,6 +20,16 @@ config.plugins = config.plugins.concat([
             // and relies on global variables. Most of angular modules relies on
             // angular global variable, so we should keep it unchanged
             except: ['$super', '$', 'exports', 'require', 'angular']
+        },
+        minimize: true,
+        compress: {
+            warnings: false
+        }
+    }),
+
+    new webpack.DefinePlugin({
+        'process.env': {
+            'NODE_ENV': JSON.stringify('production')
         }
     })
 ]);
