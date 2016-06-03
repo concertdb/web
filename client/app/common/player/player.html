@@ -1,9 +1,9 @@
 <div class="player" ng-show="vm.showSoundBar">
 
-    <div class="player-container">
+    <div class="player-container" layout-align="center center">
         <sound-manager></sound-manager>
 
-        <div layout="row"
+        <div layout-gt-xs="row"
              layout-xs="column"
              layout-align="center">
             <div flex="20">
@@ -47,7 +47,7 @@
 
                 </div>
             </div>
-            <div flex="15">
+            <div flex="15" layout-align="center center">
                 <div layout="row" layout-align="center center" class="player-buttons">
                     <i class="material-icons" prev-track>fast_rewind</i>
                     <!--isPlaying is exposed by soundmanager2 directly on the $scope-->
