@@ -1,4 +1,4 @@
-<div class="player" ng-show="vm.showSoundBar">
+<div class="player">
 
     <div class="player-container" layout-align="center center">
         <sound-manager></sound-manager>
@@ -19,7 +19,7 @@
 
 
                         <div layout="column">
-                            <div class="playlist-song" ng-repeat="song in playlist">
+                            <div class="playlist-song" ng-repeat="song in playlist track by $index">
                                 <div layout="row">
                                 <div flex="80">
                                     <a play-from-playlist="song">{{ song.title }}</a>
@@ -48,7 +48,7 @@
                             ({{ currentPostion }} / {{ currentDuration }})
                         </span>
                         <span layout="column" layout-align="start center">
-                            <h3 class="currently-playing">{{ currentPlaying.title }} - {{ currentPlaying.album }}</h3>
+                            <h3 class="currently-playing">{{vm.ConcertService.current.currentPlaying.title}} </h3>
                         </span>
                     </div>
 
