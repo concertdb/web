@@ -11,6 +11,8 @@ function concertController($rootScope, $log, $http, $state, $stateParams, Archiv
         vm.currentYear = ConcertService.current.year.name;
     }
     initializeConcertController();
+    
+    vm.noConcertList = (vm.currentYear === undefined);
 
     //@todo: refactor component-to-component communication. $broadcast not in ng2.
     // set scope watches and event listeners

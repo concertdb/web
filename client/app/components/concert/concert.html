@@ -4,12 +4,20 @@
 
     <div layout="row" ng-cloak>
 
-        <sidebar flex="25"></sidebar>
+        <sidebar flex="20"></sidebar>
 
         <md-content flex layout="column">
+
+            <div class="home-content" layout="column" layout-align="center center" ng-if="!vm.searchResults.length">
+                <div class="site-header md-display-1">
+                    Welcome to ConcertDB
+                </div>
+                <img class="homepage-image" src="http://i.imgur.com/5OTRuqD.jpg?1">
+            </div>
+
             <!--concertSearchResults-->
             <div class="search-results-year-header md-display-1" ng-show="vm.searchResults.length">{{ vm.currentYear }}</div>
-            <div class="search-results">
+            <div class="search-results" ng-show="vm.searchResults.length">
                 <md-list flex>
                     <md-list-item class="md-title concert-search-result-item"
                         ng-repeat="concert in vm.searchResults"
