@@ -21,15 +21,17 @@
 
 
                     <div layout="column">
-                        <div class="playlist-song" ng-repeat="song in playlist track by $index">
+                        <div class="playlist-song"
+                             ng-repeat="song in playlist track by $index"
+                             play-from-playlist="song">
                             <div layout="row">
                                 <div flex="80">
-                                    <a play-from-playlist="song">{{ song.title }}</a>
+                                    <b><a class="playlist-song-name">{{ song.title }}</a></b>
                                     <span ng-if="currentPlaying.id == song.id">(current)</span>
                                 </div>
                                 <div flex="20">
                                     <a remove-from-playlist="song" data-index="{{$index}}">
-                                        <small>X</small>
+                                        <small><i class="material-icons" ng-style="{'font-size':'12px'}">clear</i></small>
                                     </a>
                                 </div>
                             </div>
@@ -46,7 +48,7 @@
                         <div class="seekLoad" ng-style="{width : ( progress + '%' ) }"></div>
                     </div>
                     <div layout="column" >
-                        <span layout="row" layout-align="end center">
+                        <span class="player-time" layout="row" layout-align="end center">
                             ({{ currentPostion }} / {{ currentDuration }})
                         </span>
                         <span layout="column" layout-align="center center">
@@ -57,16 +59,16 @@
 
                 </div>
                 <div layout="row" layout-align="center top" class="player-buttons">
-                    <i class="material-icons" prev-track>fast_rewind</i>
+                    <i class="material-icons play-buttons" prev-track>fast_rewind</i>
                     <!--isPlaying is exposed by soundmanager2 directly on the $scope-->
-                    <i class="material-icons"
+                    <i class="material-icons play-buttons"
                        ng-show="!vm.ConcertService.current.isPlaying"
                        play-music>play_arrow</i>
                     <!--isPlaying is exposed by soundmanager2 directly on the $scope-->
-                    <i class="material-icons"
+                    <i class="material-icons play-buttons"
                        ng-show="vm.ConcertService.current.isPlaying"
                        pause-music>pause</i>
-                    <i class="material-icons" next-track>fast_forward</i>
+                    <i class="material-icons play-buttons" next-track>fast_forward</i>
                 </div>
             </div>
 
