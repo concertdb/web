@@ -62,11 +62,11 @@
                     <i class="material-icons" prev-track>fast_rewind</i>
                     <!--isPlaying is exposed by soundmanager2 directly on the $scope-->
                     <i class="material-icons"
-                       ng-show="!isPlaying"
+                       ng-show="!vm.ConcertService.current.isPlaying"
                        play-music>play_arrow</i>
                     <!--isPlaying is exposed by soundmanager2 directly on the $scope-->
                     <i class="material-icons"
-                       ng-show="isPlaying"
+                       ng-show="vm.ConcertService.current.isPlaying"
                        pause-music>pause</i>
                     <i class="material-icons" next-track>fast_forward</i>
                 </div>

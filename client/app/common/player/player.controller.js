@@ -5,9 +5,10 @@ function PlayerController($log, $scope, $stateParams, ConcertService){
     vm.songs = ConcertService.concertSongs[$stateParams.id];
     vm.showSoundBar = false;
     vm.ConcertService = ConcertService;
+
     // Event listener for soundmanager2 `isPlaying` event
     $scope.$on('music:isPlaying', function(event, isPlaying) {
-        vm.showSoundBar = true;
+        ConcertService.current.isPlaying = isPlaying;
         console.log(isPlaying);
     });
     $scope.$watch('currentPlaying', function(newValue, oldValue){
