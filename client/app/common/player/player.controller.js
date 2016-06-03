@@ -17,6 +17,14 @@ function PlayerController($log, $scope, $stateParams, ConcertService){
         }
     });
 
+    //Toggle play/pause when the spacebar is pressed
+    // window.onkeyup = function(e){
+    //     if(e.keyCode == 32){
+    //         vm.ConcertService.current.isPlaying = !vm.ConcertService.current.isPlaying;
+    //         @todo: Figure out how to toggle isPlaying
+    //     }
+    // };
+
 }
 
 export default PlayerController;
