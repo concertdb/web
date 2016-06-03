@@ -13,7 +13,7 @@ import gutil    from 'gulp-util';
 import serve    from 'browser-sync';
 import del      from 'del';
 import webpackDevMiddelware from 'webpack-dev-middleware';
-import webpachHotMiddelware from 'webpack-hot-middleware';
+import webpackHotMiddelware from 'webpack-hot-middleware';
 import colorsSupported      from 'supports-color';
 import historyApiFallback   from 'connect-history-api-fallback';
 
@@ -42,12 +42,12 @@ let paths = {
     ],
     output: root,
     blankTemplates: path.join(__dirname, 'generator', 'component/**/*.**'),
-    dest: path.join(__dirname, 'dist')
+    dest: path.join(__dirname, 'public')
 };
 
 // use webpack.config.js to build modules
 gulp.task('webpack', ['clean'], (cb) => {
-    const config = require('./webpack.dist.config');
+    const config = require('./webpack.prod.config');
     config.entry.app = paths.entry;
 
     webpack(config, (err, stats) => {
@@ -90,7 +90,7 @@ gulp.task('serve', () => {
                 },
                 publicPath: config.output.publicPath
             }),
-            webpachHotMiddelware(compiler)
+            webpackHotMiddelware(compiler)
         ]
     });
 });
