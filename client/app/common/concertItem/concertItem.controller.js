@@ -1,4 +1,4 @@
-function concertItemController($rootScope, $state, $stateParams, ConcertService){
+function concertItemController($rootScope, $scope, $state, $stateParams, ConcertService){
     "ngInject";
     const vm = this;
     vm.name = 'concertItem';
@@ -11,9 +11,6 @@ function concertItemController($rootScope, $state, $stateParams, ConcertService)
         .$on('update:searchResults', function(){
             $state.go('concert.index');
         });
-    // $rootScope
-    //     .$on('$locationChangeStart', function(event, toUrl, fromUrl) {
-    //      });
 }
 
 export default concertItemController;

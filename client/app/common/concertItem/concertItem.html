@@ -20,7 +20,7 @@
                             </div>
 
                             <div class="concert-details">
-                                <a class="md-button" href="{{vm.currentConcert.archiveUrl}}" target="_blank">Archive Link</a>
+                                <a class="md-button archive-link" href="{{vm.currentConcert.archiveUrl}}" target="_blank">Archive Link</a>
                             </div>
 
                         </div>
@@ -53,7 +53,7 @@
             <p class="spacing"></p>
         </div>
 
-        <player class="flex-player"></player>
+        <player class="flex-player" ng-if="!vm.noConcertFound"></player>
 
     </div>
 

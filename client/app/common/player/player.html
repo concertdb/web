@@ -1,4 +1,4 @@
-<div class="player" ng-show="vm.showSoundBar">
+<div class="player">
 
     <div class="player-container" layout-align="center center">
         <sound-manager></sound-manager>
@@ -10,26 +10,28 @@
                 <!--playlist-->
                 <div class="playlist-container">
                     <div class="playlist-header" layout="row">
-                        <span class="md-subhead"> Playlist </span>
-                        <li layout="row" layout-align="end center">
-                            <i class="material-icons player-button" repeat-music>repeat</i>
-                            <i class="material-icons player-button" clear-playlist>clear</i>
-                        </li>
+                        <div flex="50">
+                            <span class="md-subhead"> Playlist </span>
+                        </div>
+                        <div flex="50">
+                                <span><i class="material-icons player-button" repeat-music>repeat</i>
+                                <i class="material-icons player-button" clear-playlist>clear</i></span>
+                        </div>
                     </div>
 
 
                         <div layout="column">
-                            <div class="playlist-song" ng-repeat="song in playlist">
+                            <div class="playlist-song" ng-repeat="song in playlist track by $index">
                                 <div layout="row">
-                                <div flex="80">
-                                    <a play-from-playlist="song">{{ song.title }}</a>
-                                    <span ng-if="currentPlaying.id == song.id">(current)</span>
-                                </div>
-                                <div flex="20">
-                                    <a remove-from-playlist="song" data-index="{{$index}}">
-                                        <small>X</small>
-                                    </a>
-                                </div>
+                                    <div flex="80">
+                                        <a play-from-playlist="song">{{ song.title }}</a>
+                                        <span ng-if="currentPlaying.id == song.id">(current)</span>
+                                    </div>
+                                    <div flex="20">
+                                        <a remove-from-playlist="song" data-index="{{$index}}">
+                                            <small>X</small>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -48,7 +50,8 @@
                             ({{ currentPostion }} / {{ currentDuration }})
                         </span>
                         <span layout="column" layout-align="start center">
-                            <h3 class="currently-playing">{{ currentPlaying.title }} - {{ currentPlaying.album }}</h3>
+                            <h3 class="currently-playing">{{vm.ConcertService.current.currentPlaying.title}}</h3>
+                            <h3 class="currently-playing">{{vm.ConcertService.current.currentPlaying.album}}</h3>
                         </span>
                     </div>
 
