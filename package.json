@@ -63,6 +63,9 @@
     "build": "gulp webpack",
     "smoketest": "gulp webpack && node server.js"
   },
+  "engines": {
+    "node": "5.9.1"
+  },
   "keywords": [
     "concerts",
     "music",
