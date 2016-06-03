@@ -6,7 +6,7 @@
         <div layout-gt-xs="row"
              layout-xs="column"
              layout-align="center">
-            <div flex="20">
+            <div flex="25">
                 <!--playlist-->
                 <div class="playlist-container">
                     <div class="playlist-header" layout="row">
@@ -20,26 +20,26 @@
                     </div>
 
 
-                        <div layout="column">
-                            <div class="playlist-song" ng-repeat="song in playlist track by $index">
-                                <div layout="row">
-                                    <div flex="80">
-                                        <a play-from-playlist="song">{{ song.title }}</a>
-                                        <span ng-if="currentPlaying.id == song.id">(current)</span>
-                                    </div>
-                                    <div flex="20">
-                                        <a remove-from-playlist="song" data-index="{{$index}}">
-                                            <small>X</small>
-                                        </a>
-                                    </div>
+                    <div layout="column">
+                        <div class="playlist-song" ng-repeat="song in playlist track by $index">
+                            <div layout="row">
+                                <div flex="80">
+                                    <a play-from-playlist="song">{{ song.title }}</a>
+                                    <span ng-if="currentPlaying.id == song.id">(current)</span>
+                                </div>
+                                <div flex="20">
+                                    <a remove-from-playlist="song" data-index="{{$index}}">
+                                        <small>X</small>
+                                    </a>
                                 </div>
                             </div>
                         </div>
+                    </div>
 
                 </div>
                 <!--/playlist-->
             </div>
-            <div flex="65">
+            <div flex="70">
 
                 <div class="player-controls" layout="column">
                     <div class="seekBase" seek-track>
@@ -49,16 +49,14 @@
                         <span layout="row" layout-align="end center">
                             ({{ currentPostion }} / {{ currentDuration }})
                         </span>
-                        <span layout="column" layout-align="start center">
+                        <span layout="column" layout-align="center center">
                             <h3 class="currently-playing">{{vm.ConcertService.current.currentPlaying.title}}</h3>
                             <h3 class="currently-playing">{{vm.ConcertService.current.currentPlaying.album}}</h3>
                         </span>
                     </div>
 
                 </div>
-            </div>
-            <div flex="15" layout-align="center center">
-                <div layout="row" layout-align="center center" class="player-buttons">
+                <div layout="row" layout-align="center top" class="player-buttons">
                     <i class="material-icons" prev-track>fast_rewind</i>
                     <!--isPlaying is exposed by soundmanager2 directly on the $scope-->
                     <i class="material-icons"
@@ -71,6 +69,7 @@
                     <i class="material-icons" next-track>fast_forward</i>
                 </div>
             </div>
+
         </div>
 
     </div>
