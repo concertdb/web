@@ -1,4 +1,11 @@
 <!-- Place all UI elements intended to be present across all routes in this file -->
 <div class="app">
-  <div ui-view></div>
+    <div layout="row">
+        <sidebar></sidebar>
+        <div flex layout="column">
+            <navbar></navbar>
+            <div ui-view></div>
+            <player class="player"></player>
+        </div>
+    </div>
 </div>

@@ -3,47 +3,13 @@
     <div class="player-container" layout-align="center center">
         <sound-manager></sound-manager>
 
-        <div layout-gt-xs="row"
+        <div layout="row"
              layout-xs="column"
              layout-align="center">
-            <div flex="25">
-                <!--playlist-->
-                <div class="playlist-container">
-                    <div class="playlist-header" layout="row">
-                        <div flex="50">
-                            <span class="md-subhead"> Playlist </span>
-                        </div>
-                        <div flex="50">
-                                <span><i class="material-icons player-button" repeat-music>repeat</i>
-                                <i class="material-icons player-button" clear-playlist>clear</i></span>
-                        </div>
-                    </div>
 
+            <div flex class="player-controls">
 
-                    <div layout="column">
-                        <div class="playlist-song"
-                             ng-repeat="song in playlist track by $index"
-                             play-from-playlist="song">
-                            <div layout="row">
-                                <div flex="80">
-                                    <b><a class="playlist-song-name">{{ song.title }}</a></b>
-                                    <span ng-if="currentPlaying.id == song.id">(current)</span>
-                                </div>
-                                <div flex="20">
-                                    <a remove-from-playlist="song" data-index="{{$index}}">
-                                        <small><i class="material-icons" ng-style="{'font-size':'12px'}">clear</i></small>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <!--/playlist-->
-            </div>
-            <div flex="70">
-
-                <div class="player-controls" layout="column">
+                <div layout="column">
                     <div class="seekBase" seek-track>
                         <div class="seekLoad" ng-style="{width : ( progress + '%' ) }"></div>
                     </div>
@@ -71,6 +37,45 @@
                     <i class="material-icons play-buttons" next-track>fast_forward</i>
                 </div>
             </div>
+
+            <div flex>
+                <!--playlist-->
+                <div class="playlist-container">
+                    <div class="playlist-header" layout="row">
+                        <div layout-align="end center">
+                            <span class="md-subhead"> Playlist </span>
+                        </div>
+                        <span flex></span>
+                        <div class="playlist-buttons">
+                                <i class="material-icons player-button" repeat-music>repeat</i>
+                                <i class="material-icons player-button" clear-playlist>clear</i>
+                        </div>
+                    </div>
+
+
+                    <div layout="column">
+                        <div class="playlist-song"
+                             ng-repeat="song in playlist track by $index"
+                             play-from-playlist="song">
+                            <div layout="row">
+                                <div>
+                                    <b><a class="playlist-song-name">{{ song.title }}</a></b>
+                                    <span ng-if="currentPlaying.id == song.id">(current)</span>
+                                </div>
+                                <span flex></span>
+                                <div class="playlist-buttons">
+                                    <a remove-from-playlist="song" data-index="{{$index}}">
+                                        <small><i class="material-icons" ng-style="{'font-size':'12px'}">clear</i></small>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!--/playlist-->
+            </div>
+
 
         </div>
 

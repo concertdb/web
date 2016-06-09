@@ -116,10 +116,6 @@ function SidebarController($rootScope, $log, $stateParams, ConcertService, Archi
             });
     };
 
-
-
-
-
 }
 
 export default SidebarController;
