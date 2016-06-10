@@ -1,5 +1,21 @@
 .player {
 
+  color: #00695C;
+
+  font-size: 11px;
+  h3 {
+    margin-bottom: 5px;
+  }
+  h4 {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  h1 {
+    font-size: 20px;
+  }
+
+  background-color: #FFFFFF;
+
   .seekBase {
     height: 30px;
     width: 100%;
@@ -24,16 +40,10 @@
   .playlist-header {
     margin-bottom: 10px;
   }
-  .playlist-song {
-    margin-top: 5px;
-  }
   .playlist-song:hover {
     background-color: #00BFA5;
     color: #FFFFFF;
     //padding: 2px 0px 2px 2px;
-  }
-  .playlist-song-name {
-    font-size: 10px;
   }
   .currently-playing {
     color: #00695C;
@@ -48,15 +58,53 @@
   .playlist-buttons {
     padding-right: 20px;
   }
+  .song-list-container {
+    overflow: auto;
+  }
+  .clear-song {
+    padding-top: 15px;
+  }
+  .currently-playing-words {
+    padding-top: 10px;
+  }
+  .playlist-info {
+    padding-bottom: 10px;
+    padding-left: 10px;
+  }
+  .playlist-info:hover {
+    color: white;
+  }
+  .play-buttons {
+    font-size: 40px;
+    margin: 5px;
+    margin-bottom: 15px;
+    border: 2px solid #00BFA5;
+    color: #00BFA5;
+  }
   .play-buttons:hover {
     background-color: #00BFA5;
     color: #FFFFFF;
   }
   .player-time {
+    font-size: 14px;
     padding-top: 4px;
   }
-
-  li {
-    cursor: pointer;
+  .active-track-indicator {
+    background-color: #00BFA5;
+    color: #FFFFFF;
+    padding: 3px 5px 3px 5px;
+  }
+  .song-list-container {
+    height: 200px;
+    overflow: auto;
+  }
+  .playlist-song-album, .playlist-song-artist {
+    color: #607D8B;
+    &:hover {
+      color: #FFFFFF;
+    }
+  }
+  .playlist-song-album:hover, .playlist-song-artist:hover {
+    color: #FFFFFF;
   }
 }

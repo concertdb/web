@@ -1,4 +1,4 @@
-function SidebarController($rootScope, $log, $stateParams, ConcertService, ArchiveOrgService){
+function SidebarController($rootScope, $log, $mdSidenav, ConcertService, ArchiveOrgService){
     "ngInject";
 
     const vm = this;
@@ -89,6 +89,8 @@ function SidebarController($rootScope, $log, $stateParams, ConcertService, Archi
     vm.setYear = function(year){
         ConcertService.current.year.name = year;
         vm.searchForConcert(year);
+        //@todo: get rid of magic string!!!
+        $mdSidenav('leftSideNavbar').toggle();
     };
     vm.showArtistList = function(){
         vm.showArtistChoices = !vm.showArtistChoices;
