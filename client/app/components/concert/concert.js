@@ -7,23 +7,6 @@ import ConcertService from './concert.service';
 let concertModule = angular.module('concert', [
     uiRouter
 ])
-// .run(function($rootScope, ConcertService){
-//     "ngInject";
-//     debugger;
-//     $rootScope.$on('$locationChangeStart', function(){
-//         debugger;
-//     });
-//     $rootScope.$on('$stateChangeStart', function(){
-//         debugger;
-//     });
-//     $rootScope.$on('$stateChangeError', function (event, toState, toParams, fromState, fromParams, error) {
-//         debugger;
-//         if(toState.name == 'Categories')
-//         {
-//             // Do Something
-//         }
-//     });
-// })
 
 .config(($stateProvider, $urlRouterProvider) => {
     "ngInject";

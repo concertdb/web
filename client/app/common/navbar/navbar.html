@@ -1,5 +1,10 @@
-<nav class="navbar dark-primary-color">
-    <div class="logo">
-        <h1><a ui-sref="concert.index"><img src="http://i.imgur.com/LU9FDdm.png"></a></h1>
+<nav class="navbar dark-primary-color"
+    ng-click="toggleSidenav('leftSideNavbar')">
+    <div layout="row">
+        <div class="logo">
+            <a ><img src="http://i.imgur.com/LU9FDdm.png"></a>
+        </div>
+        <span flex></span>
+        <i class="material-icons menu-icon" hide-gt-sm ng-style="{'font-size':'40px', 'color':'#FFFFFF'}">menu</i>
     </div>
 </nav>

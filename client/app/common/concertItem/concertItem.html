@@ -1,8 +1,4 @@
-<navbar></navbar>
-
-<div flex layout="row">
-
-    <sidebar flex="20"></sidebar>
+<div flex layout="column">
 
     <div layout="column" flex>
         <div class="flex-primary-content">
@@ -27,20 +23,20 @@
                         <!--concertSongList-->
 
                         <div class="concert-song-list-container" flex layout="column">
-                            <md-list class="concert-song-list">
+                            <div class="concert-song-list">
 
-                                <md-list-item
+                                <div
                                     class="song-row"
+                                    layout="row"
                                     ng-repeat="song in vm.concertSongs | orderBy: 'file'">
                                     <div class="song-container" music-player="play" add-song="song">
                                         <a href="javascript:void(0);" class="add-to-playlist-link" >
                                             {{::song.track || 'NA'}} - {{::song.title || 'No Title Available'}} - {{::song.length}}
                                         </a>
                                     </div>
+                                </div>
 
-                                </md-list-item>
-
-                            </md-list>
+                            </div>
                         </div>
 
                         <!--/concertSongList-->
@@ -48,8 +44,6 @@
                 </div>
             </md-content>
         </div>
-
-        <player class="flex-player" ng-if="!vm.noConcertFound"></player>
 
     </div>
 
