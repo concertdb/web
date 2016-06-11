@@ -15,8 +15,8 @@ angular.module('app', [
         // @see: https://github.com/angular-ui/ui-router/wiki/Frequently-Asked-Questions
         // #how-to-configure-your-server-to-work-with-html5mode
         //@todo: html5Mode. Configure server rewrites to allow for html5 mode.
-        // $locationProvider.html5Mode(false);
-        $locationProvider.html5Mode(true).hashPrefix('!');
+        $locationProvider.html5Mode(false);
+        // $locationProvider.html5Mode(true).hashPrefix('!');
     })
 
     .component('app', AppComponent);
