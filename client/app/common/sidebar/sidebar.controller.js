@@ -1,3 +1,6 @@
+import artistYearChoices from './artistYearChoices';
+import _ from 'lodash';
+
 function SidebarController($rootScope, $log, $mdSidenav, ConcertService, ArchiveOrgService){
     "ngInject";
 
@@ -6,78 +9,10 @@ function SidebarController($rootScope, $log, $mdSidenav, ConcertService, Archive
     function init(){
         vm.name = 'concert';
         vm.currentArtist = ConcertService.current.artist.name;
-        //Hard-coded band and year list
-        vm.artistChoices =[
-            {
-                artist: 'String Cheese Incident'
-            },
-            {
-                artist: 'Lotus'
-            },
-            {
-                artist: 'Keller Williams'
-            },
-            {
-                artist: 'Sound Tribe Sector 9'
-            },
-            {
-                artist: 'Yonder Mountain String Band'
-            }
-        ];
-        vm.yearChoices = [
-            {
-                year: '2016'
-            },
-            {
-                year: '2015'
-            },
-            {
-                year: '2014'
-            },
-            {
-                year: '2013'
-            },
-            {
-                year: '2012'
-            },
-            {
-                year: '2011'
-            },
-            {
-                year: '2010'
-            },
-            {
-                year: '2009'
-            },
-            {
-                year: '2008'
-            },
-            {
-                year: '2007'
-            },
-            {
-                year: '2006'
-            },
-            {
-                year: '2005'
-            },
-            {
-                year: '2004'
-            },
-            {
-                year: '2003'
-            },
-            {
-                year: '2002'
-            },
-            {
-                year: '2001'
-            },
-            {
-                year: '2000'
-            }
-        ];
         vm.showArtistChoices = false;
+
+        //Hardcoded with band and their years active
+        vm.artistYearChoices = artistYearChoices;
     }
     init();
 
@@ -85,7 +20,16 @@ function SidebarController($rootScope, $log, $mdSidenav, ConcertService, Archive
         ConcertService.current.artist.name = artist;
         vm.currentArtist = ConcertService.current.artist.name;
         vm.showArtistChoices = !vm.showArtistChoices;
+        setArtistYears(artist);
     };
+    function setArtistYears (artist){
+        vm.artistAndYear = _.find(vm.artistYearChoices, function(artistYear){
+            return artistYear.artist === artist;
+        });
+        vm.currentYears = vm.artistAndYear.years;
+        //pass the first year of the artists active years into the set year function
+        vm.setYear(vm.artistAndYear.years[0]);
+    }
     vm.setYear = function(year){
         ConcertService.current.year.name = year;
         vm.searchForConcert(year);

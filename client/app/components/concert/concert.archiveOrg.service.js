@@ -66,7 +66,15 @@ let ArchiveOrgService = function ($log, $http, $state, ConcertService) {
             mp3Array.forEach(function(song){
                 //Parse the song and save it to the db
                 let formattedSong = ArchiveOrgService.parseArchiveOrgSong(song, concert);
-                //@TODO: Pass the properly formatted song object to the save function, which will save it to the db
+                //@TODO: pouchDb. Pass the properly formatted song object to the save function, which will save it to the db
+                // db.put({
+                //     _id: 'mydoc',
+                //     title: 'Heroes'
+                // }).then(function (response) {
+                //     // handle response
+                // }).catch(function (err) {
+                //     console.log(err);
+                // });
             });
         }
 

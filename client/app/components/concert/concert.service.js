@@ -8,6 +8,14 @@ let ConcertService = function ($log, $http) {
 
     //LocalCache interactions
     let setCurrentConcert = (concertObject) => {
+        // db.put({
+        //     _id: 'mydoc',
+        //     title: 'Heroes'
+        // }).then(function (response) {
+        //     // handle response
+        // }).catch(function (err) {
+        //     console.log(err);
+        // });
         this.currentConcert[concertObject.concertId] = concertObject;
     };
     let getCurrentConcert = (concertId) => {

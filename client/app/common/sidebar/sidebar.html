@@ -17,7 +17,7 @@
                  ng-show="vm.showArtistChoices">
             <md-list-item class="default-primary-color"
                           ng-show="vm.showArtistChoices"
-                          ng-repeat="item in vm.artistChoices"
+                          ng-repeat="item in vm.artistYearChoices"
                           ng-click="vm.setArtist(item.artist)">
                 <md-item-content class="md-title artist-list-choice default-primary-color" layout="row" layout-align="start center">
                     <div class="inset">
@@ -26,13 +26,14 @@
                 </md-item-content>
             </md-list-item>
         </md-list>
+        <!--{{artistObj}}-->
         <md-list class="year-list light-primary-color">
             <md-list-item class="light-primary-color"
-                          ng-repeat="item in vm.yearChoices"
-                          ng-click="vm.setYear(item.year)">
+                          ng-repeat="year in vm.currentYears"
+                          ng-click="vm.setYear(year)">
                 <md-item-content class="md-subhead year-list-choice light-primary-color" layout="row" layout-align="start center">
                     <div class="inset">
-                        {{ item.year }}
+                        {{ year }}
                     </div>
                 </md-item-content>
             </md-list-item>
