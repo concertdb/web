@@ -7,7 +7,7 @@ let ConcertService = function ($log, $http) {
     const ConcertService = this;
 
     //LocalCache interactions
-    let setCurrentConcert = (concertObject) => {
+    let setCurrentConcert = (concertObject, songsArray) => {
         // db.put({
         //     _id: 'mydoc',
         //     title: 'Heroes'
@@ -17,6 +17,7 @@ let ConcertService = function ($log, $http) {
         //     console.log(err);
         // });
         this.currentConcert[concertObject.concertId] = concertObject;
+        this.concertSongs[concertObject.concertId] = songsArray;
     };
     let getCurrentConcert = (concertId) => {
         return this.currentConcert[concertId] || {};
