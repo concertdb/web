@@ -24,7 +24,7 @@ let concertModule = angular.module('concert', [
             template: '<concert></concert>'
         })
         .state('concert.show', {
-            url: '/:id',
+            url: '/:artist/:year/:id',
             template: '<concert-item></concert-item>',
             // resolve: {
             //     concertSongs: function($state, $stateParams, ConcertService){

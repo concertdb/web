@@ -31,8 +31,8 @@ let ArchiveOrgService = function ($log, $http, $state, ConcertService) {
         $log.info('ArchiveOrgService#parseArchiveOrgConcert');
 
         //Transform the concert response into desired concert {}
-        //@todo: concertId manipulation. Figure out different way to get unique id for concert. This was done to prevent issue #XXXX.
-        let concertId = concert.metadata.identifier.replace(/([^a-z0-9]+)/gi, '');
+        //@todo: concertId manipulation. Figure out different way to get unique id for concert. This was done to prevent issue #53.
+        let concertId = concert.metadata.identifier.replace(/([.]+)/g, '+');
         let archiveUrl = `http://archive.org/details/${concert.metadata.identifier}`;
         let formattedConcertObject = {
             title: concert.metadata.title,
@@ -80,8 +80,8 @@ let ArchiveOrgService = function ($log, $http, $state, ConcertService) {
     let parseArchiveOrgSong = (song, concert) => {
         $log.info('ArchiveOrgService#parseArchiveOrgSong');
         let archiveUrl = `https://${concert.d1}${concert.dir}/${song.name}`;
-        //@todo: concertId manipulation. Figure out different way to get unique id for concert. This was done to prevent issue #XXXX.
-        let concertId = concert.metadata.identifier.replace(/([^a-z0-9]+)/gi, '');
+        //@todo: concertId manipulation. Figure out different way to get unique id for concert. This was done to prevent issue #53.
+        let concertId = concert.metadata.identifier.replace(/([.]+)/g, '+');
 
         let songToSave = {
             title: song.title,
