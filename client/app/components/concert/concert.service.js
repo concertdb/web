@@ -1,22 +1,53 @@
 //@todo: inject SongService
 import config from '../../../../dev-workspace/config';
 
-let ConcertService = function ($log, $http) {
+let ConcertService = function ($log, $window, $http) {
     "ngInject";
 
     const ConcertService = this;
+    const db = $window.PouchDB('concertDbLocal');
 
     //LocalCache interactions
-    let setCurrentConcert = (concertObject) => {
-        // db.put({
-        //     _id: 'mydoc',
-        //     title: 'Heroes'
-        // }).then(function (response) {
-        //     // handle response
-        // }).catch(function (err) {
-        //     console.log(err);
-        // });
+    let setCurrentConcert = (concertObject, songsArray) => {
+        //leave this part in to maintain existing functionality for now
         this.currentConcert[concertObject.concertId] = concertObject;
+        this.concertSongs[concertObject.concertId] = songsArray;
+
+        // update or create in PouchDb
+        //@todo: Promises. Refactor this into various methods... make it readable and maintainable...
+        //@todo: PouchDB. Figure out why this update/create flow is required.
+        db.get(concertObject.concertId).then(function(foundConcert) {
+            return db.put({
+                _id: foundConcert._id,
+                _rev: foundConcert._rev,
+                concert: concertObject,
+                playlist: songsArray
+            });
+
+        }).then(function(response) {
+            // handle response of an existing concertAndPlaylist {} in PouchDB
+
+        }).catch(function (error) {
+            // there is no existing doc to update
+            if (error.name === 'not_found'){
+                //so create it...
+                db.put({
+                    _id: concertObject.concertId,
+                    concert: concertObject,
+                    playlist: songsArray
+
+                }).then(function (response) {
+                    // handle response of a newly created concertAndPlaylist {} in PouchDB
+                    //@todo: communicate that the new concertAndPlaylist {} is available in PouchDB to the concertItemController.
+
+                }).catch(function (error) {
+                    $log.error(error);
+                });
+
+            } else {
+                $log.error(error);
+            }
+        });
     };
     let getCurrentConcert = (concertId) => {
         return this.currentConcert[concertId] || {};

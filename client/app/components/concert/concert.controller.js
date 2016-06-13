@@ -1,4 +1,4 @@
-function concertController($rootScope, $log, $http, $state, $stateParams, ArchiveOrgService, ConcertService){
+function concertController($rootScope, $log, $http, $state, ConcertService){
     "ngInject";
 
     const http = $http;
@@ -25,30 +25,16 @@ function concertController($rootScope, $log, $http, $state, $stateParams, Archiv
 
     // component interaction methods
     vm.clickConcertFromIndex = function(concertIdentifier) {
-        //@todo: concertId manipulation. Figure out different way to get unique id for concert. This was done to prevent issue #XXXX.
-        let concertId = concertIdentifier.replace(/([^a-z0-9]+)/gi, '');
-
-        // Use the getConcertById method to query archive.org's db for the concert
-        ArchiveOrgService.getConcertById(concertIdentifier)
-            .then(function(data){
-
-                //return the concert object recieved back from archive.org
-                let concert = data.data;
-
-                return concert;
-
-            }, concertControllerErrorHandler)
-            //pass the returned concert to the parseArchiveOrgConcert method for parsing and caching of the concert and its songs
-            .then(function(concert){
-                ArchiveOrgService.parseArchiveOrgConcert(concert);
-                $state.go('concert.show', {id: concertId});
-
-            }, concertControllerErrorHandler);
+        //@todo: concertId manipulation. Figure out different way to get unique id for concert. This was done to prevent issue #53.
+        //@todo: refactor. make conversion between concertIdentifier and concertId a ConcertService method.
+        let concertId = concertIdentifier.replace(/([.]+)/g, '+');
+        
+        $state.go('concert.show', {
+            artist: vm.currentArtist,
+            year: vm.currentYear,
+            id: concertId
+        });
     };
-
-    function concertControllerErrorHandler(error){
-        $log.error('Error in concertController#clickConcertFromIndex: ', error);
-    }
 
 }
 

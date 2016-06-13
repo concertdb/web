@@ -1,0 +1,67 @@
+<md-card class="playlist">
+
+        <sound-manager></sound-manager>
+
+        <div layout="row"
+             layout-xs="column"
+             layout-align="center">
+
+
+            <div flex>
+                <!--playlist-->
+
+                    <div class="playlist-header" layout="row">
+                        <div layout-align="end center">
+                            <span class="md-title"> Playlist </span>
+                        </div>
+                        <span flex></span>
+                        <div class="playlist-buttons">
+                                <i class="material-icons player-button" repeat-music>repeat</i>
+                                <i class="material-icons player-button" clear-playlist>clear</i>
+                        </div>
+                    </div>
+
+
+
+                        <div class="playlist-song"
+                             ng-repeat="song in playlist track by $index"
+                             play-from-playlist="song">
+                            <div layout="row">
+                                <md-item-content>
+                                    <div class="playlist-info">
+                                        <div class="playlist-song-name">
+                                            <!--@todo: Add ng-class active for styling... and add icon-->
+                                            <h3>{{ $index + 1 }} - {{ song.title }}
+                                                <span
+                                                      flex ng-if="currentPlaying.id == song.id"
+                                                      ng-class="{'active-track-indicator': currentPlaying.id == song.id}">
+                                                    current
+                                                </span>
+                                            </h3>
+                                        </div>
+                                        <div>
+                                            {{ song.artist }}
+                                        </div>
+                                        <div>
+                                            {{ song.album }}
+                                        </div>
+                                    </div>
+                                </md-item-content>
+                                <span flex></span>
+                                <div class="playlist-buttons clear-song">
+                                    <a remove-from-playlist="song" data-index="{{$index}}">
+                                        <small><i class="material-icons" ng-style="{'font-size':'16px'}">clear</i></small>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                <!--/playlist-->
+            </div>
+
+
+        </div>
+
+
+</md-card>
