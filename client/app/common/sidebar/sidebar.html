@@ -1,11 +1,15 @@
-<div class="sidebar">
+<div class="my-sidebar">
     <md-sidenav
-        class="sidenav1"
+        class="md-sidenav-left md-whiteframe-z2"
         md-component-id="leftSideNavbar"
         md-disable-backdrop
         md-is-locked-open="$mdMedia('gt-sm')">
         <!--this is probably not in right place-->
         <!--layout="column"-->
+
+
+
+        <!--current artist-->
         <div class="current-artist-container default-primary-color"
              ng-click="vm.showArtistList()"
              ng-show="!vm.showArtistChoices">
@@ -13,30 +17,45 @@
                 <span class="current-artist md-title" layout="row">{{ vm.currentArtist }} <i layout-align="end center" class="material-icons arrow-down">keyboard_arrow_down</i></span>
             </div>
         </div>
+
+
+
+        <!--artist list-->
         <md-list class="default-primary-color"
+                 layout-padding
                  ng-show="vm.showArtistChoices">
-            <md-list-item class="default-primary-color"
+            <md-list-item class="md-1-line default-primary-color "
                           ng-show="vm.showArtistChoices"
                           ng-repeat="item in vm.artistYearChoices"
                           ng-click="vm.setArtist(item.artist)">
-                <md-item-content class="md-title artist-list-choice default-primary-color" layout="row" layout-align="start center">
-                    <div class="inset">
+                <md-item-content
+                    class="md-title artist-list-choice default-primary-color">
+                    <!--layout-align="start center"-->
+                    <div class="md-list-item-text">
                         {{ item.artist }}
                     </div>
                 </md-item-content>
             </md-list-item>
         </md-list>
-        <!--{{artistObj}}-->
-        <md-list class="year-list light-primary-color">
-            <md-list-item class="light-primary-color"
+
+
+
+        <!--year list-->
+        <md-list class="year-list light-primary-color"
+                 layout-padding>
+            <md-list-item class="md-1-line light-primary-color"
                           ng-repeat="year in vm.currentYears"
                           ng-click="vm.setYear(year)">
-                <md-item-content class="md-subhead year-list-choice light-primary-color" layout="row" layout-align="start center">
-                    <div class="inset">
+                <md-item-content class="md-list-item-text year-list-choice light-primary-color">
+                    <!--layout-align="start center" class="md-subhead"-->
+                    <div class="md-list-item-text">
                         {{ year }}
                     </div>
                 </md-item-content>
             </md-list-item>
         </md-list>
+
+
+
     </md-sidenav>
 </div>
