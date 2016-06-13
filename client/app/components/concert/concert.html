@@ -1,33 +1,39 @@
-<div class="concert-page">
+<div class="concert-page"
+     layout="column"
+     ng-cloak
+     flex>
 
-    <div layout="row" layout-xs="column" ng-cloak>
+    <div flex layout="column">
 
-        <md-content flex layout="column">
-
-            <div class="home-content" layout="column" layout-align="center center" ng-if="!vm.searchResults.length">
+        <div class="home-content"
+             layout="column" layout-align="center center" >
+            <span ng-if="!vm.searchResults.length">
                 <div class="site-header md-display-1">
                     Welcome to ConcertDB
                 </div>
                 <img class="homepage-image" src="http://i.imgur.com/5OTRuqD.jpg?1">
-            </div>
+            </span>
+        </div>
 
-            <!--concertSearchResults-->
-            <div class="search-results-year-header md-display-1" ng-show="vm.searchResults.length">{{ vm.currentYear }}</div>
-            <div class="search-results" ng-show="vm.searchResults.length">
-                <md-list flex>
-                    <md-list-item class="md-title concert-search-result-item"
-                        ng-repeat="concert in vm.searchResults"
-                        ng-click="vm.clickConcertFromIndex(concert.identifier)">
-                        <a class="concert-link" href="javascript:void(0);">
-                            {{ concert.title }}
-                        </a>
-                    </md-list-item>
-                </md-list>
-            </div>
-            <!--/concertSearchResults-->
-        </md-content>
+        <!--concertSearchResults-->
+        <div class="search-results-year-header md-display-1"
+             ng-show="vm.searchResults.length">
+            {{ vm.currentYear }}
+        </div>
 
+        <md-list class="search-results" ng-show="vm.searchResults.length" >
+            <md-list-item class="md-title concert-search-result-item"
+                ng-repeat="concert in vm.searchResults"
+                ng-click="vm.clickConcertFromIndex(concert.identifier)">
+                <a class="concert-link" href="javascript:void(0);">
+                    {{ concert.title }}
+                </a>
+            </md-list-item>
+        </md-list>
+
+        <!--/concertSearchResults-->
     </div>
+
 </div>
 
 

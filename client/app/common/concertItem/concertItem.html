@@ -1,53 +1,43 @@
-<div flex layout="column">
+<div class="concert-info">
+    <div class="concert-item">
+        <h1 class="concert-details-error"
+            ng-if="vm.noConcertFound">
+            NO CONCERT FOUND
+        </h1>
+        <div class="concert-details-container"
+             ng-if="!vm.noConcertFound">
+            <div class="concert-details-header">
+                <div class="md-headline concert-details">{{ vm.currentConcert.title }}</div>
+            </div>
 
-    <div layout="column" flex>
-        <div class="flex-primary-content">
-            <md-content">
-                <div class="concert-info">
-                    <div class="concert-item">
-                        <h1 layout="row" layout-align="center end" class="concert-details-error"
-                            ng-if="vm.noConcertFound">
-                            NO CONCERT FOUND
-                        </h1>
-                        <div class="concert-details-container"
-                             ng-if="!vm.noConcertFound">
-                            <div class="concert-details-header">
-                                <div class="md-headline concert-details">{{ vm.currentConcert.title }}</div>
-                            </div>
+            <div class="concert-details">
+                <a class="md-button archive-link" href="{{vm.currentConcert.archiveUrl}}" target="_blank">Archive Link</a>
+            </div>
 
-                            <div class="concert-details">
-                                <a class="md-button archive-link" href="{{vm.currentConcert.archiveUrl}}" target="_blank">Archive Link</a>
-                            </div>
+        </div>
+        <!--concertSongList-->
 
-                        </div>
-                        <!--concertSongList-->
+        <div class="concert-song-list-container" flex layout="column">
+            <div class="concert-song-list">
 
-                        <div class="concert-song-list-container" flex layout="column">
-                            <div class="concert-song-list">
-
-                                <div
-                                    class="song-row"
-                                    layout="row"
-                                    ng-repeat="song in vm.concertSongs | orderBy: 'file'">
-                                    <div class="song-container" music-player="play" add-song="song">
-                                        <a href="javascript:void(0);" class="add-to-playlist-link" >
-                                            {{::song.track || 'NA'}} - {{::song.title || 'No Title Available'}} - {{::song.length}}
-                                        </a>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <!--/concertSongList-->
+                <div
+                    class="song-row"
+                    layout="row"
+                    ng-repeat="song in vm.concertSongs | orderBy: 'file'">
+                    <div class="song-container" music-player="play" add-song="song">
+                        <a href="javascript:void(0);" class="add-to-playlist-link" >
+                            {{::song.track || 'NA'}} - {{::song.title || 'No Title Available'}} - {{::song.length}}
+                        </a>
                     </div>
                 </div>
-            </md-content>
+
+            </div>
         </div>
 
+        <!--/concertSongList-->
     </div>
-
 </div>
+
 
 
 
