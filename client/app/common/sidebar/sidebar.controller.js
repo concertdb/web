@@ -43,11 +43,8 @@ function SidebarController($rootScope, $scope, $log, $state, $mdMedia, $mdSidena
 
         if (!initialLoad) {
             vm.searchForConcert(year);
-
-            if (vm.screenIsSmall) {
-                // @todo: sidebar. rid magic strings!
-                $mdSidenav('leftSideNavbar').toggle();
-            }
+            //Since toggle is disabled for gt-sm, this will only toggle the sidebar close when the screen is less than 960px
+            $mdSidenav('leftSideNavbar').toggle();
         }
     };
 
