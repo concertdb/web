@@ -14,7 +14,7 @@
              ng-click="vm.showArtistList()"
              ng-show="!vm.showArtistChoices">
             <div class="inset">
-                <span class="current-artist md-title" layout="row">{{ vm.currentArtist }} <i layout-align="end center" class="material-icons arrow-down">keyboard_arrow_down</i></span>
+                <span class="current-artist md-title" layout="row">{{ vm.ConcertService.current.artist.name }} <i layout-align="end center" class="material-icons arrow-down">keyboard_arrow_down</i></span>
             </div>
         </div>
 
@@ -26,25 +26,24 @@
                  ng-show="vm.showArtistChoices">
             <md-list-item class="md-1-line default-primary-color "
                           ng-show="vm.showArtistChoices"
-                          ng-repeat="item in vm.artistYearChoices"
-                          ng-click="vm.setArtist(item.artist)">
+                          ng-repeat="(artist, years) in vm.artistYearChoices"
+                          ng-click="vm.setArtist(artist)">
                 <md-item-content
                     class="md-title artist-list-choice default-primary-color">
                     <!--layout-align="start center"-->
                     <div class="md-list-item-text">
-                        {{ item.artist }}
+                        {{ artist }}
                     </div>
                 </md-item-content>
             </md-list-item>
         </md-list>
 
-
-
         <!--year list-->
         <md-list class="year-list light-primary-color"
                  layout-padding>
+            <!--@todo: refactor. breaking separation of concerns... uh oh! Move to script.-->
             <md-list-item class="md-1-line light-primary-color"
-                          ng-repeat="year in vm.currentYears"
+                          ng-repeat="year in vm.artistYearChoices[vm.ConcertService.current.artist.name] track by $index"
                           ng-click="vm.setYear(year)">
                 <md-item-content class="md-list-item-text year-list-choice light-primary-color">
                     <!--layout-align="start center" class="md-subhead"-->

@@ -8,6 +8,27 @@ let ConcertService = function ($log, $window, $http) {
     const db = $window.PouchDB('concertDbLocal');
 
     //LocalCache interactions
+    function getConcertFromLocalStorage (concertId){
+        return db.get(concertId);
+    }
+    function putConcertIntoLocalStorage(concertObject, songsArray){
+        return db.put({
+            _id: concertObject.concertId,
+            concert: concertObject,
+            playlist: songsArray
+
+        });
+    }
+    function updateConcertIntoLocalStorage(foundConcert, concertObject, songsArray){
+        return db.put({
+            _id: foundConcert._id,
+            _rev: foundConcert._rev,
+            concert: concertObject,
+            playlist: songsArray
+        });
+    }
+
+
     let setCurrentConcert = (concertObject, songsArray) => {
         //leave this part in to maintain existing functionality for now
         this.currentConcert[concertObject.concertId] = concertObject;
@@ -113,6 +134,10 @@ let ConcertService = function ($log, $window, $http) {
     this.createConcertRecording = createConcertRecording;
     this.setCurrentConcert = setCurrentConcert;
     this.getCurrentConcert = getCurrentConcert;
+//$promise refactor, in-progress
+    this.getConcertFromLocalStorage= getConcertFromLocalStorage;
+    this.putConcertIntoLocalStorage= putConcertIntoLocalStorage;
+    this.updateConcertIntoLocalStorage= updateConcertIntoLocalStorage;
 };
 
 export default ConcertService;

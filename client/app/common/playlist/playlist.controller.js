@@ -1,15 +1,18 @@
-function PlaylistController($log, $scope, $stateParams, ConcertService){
+function PlaylistController($log, $scope, $timeout, $stateParams, angularPlayer, ConcertService){
     "ngInject";
 
     const vm = this;
     vm.songs = ConcertService.concertSongs[$stateParams.id];
     vm.showSoundBar = false;
     vm.ConcertService = ConcertService;
+    var isDeleting;
+
+    // Expose soundmanager2 `playlist` on this scope
+    $scope.playlist = angularPlayer.getPlaylist();
 
     // Event listener for soundmanager2 `isPlaying` event
     $scope.$on('music:isPlaying', function(event, isPlaying) {
         ConcertService.current.isPlaying = isPlaying;
-        console.log(isPlaying);
     });
     $scope.$watch('currentPlaying', function(newValue, oldValue){
         if (newValue) {
@@ -17,13 +20,21 @@ function PlaylistController($log, $scope, $stateParams, ConcertService){
         }
     });
 
-    //Toggle play/pause when the spacebar is pressed
-    // window.onkeyup = function(e){
-    //     if(e.keyCode == 32){
-    //         vm.ConcertService.current.isPlaying = !vm.ConcertService.current.isPlaying;
-    //         @todo: Figure out how to toggle isPlaying
+    // $scope.$watch('playlist', function(newSoundManagerPlaylist, oldValue){
+    //     debugger;
+    //
+    //     if (newSoundManagerPlaylist && newSoundManagerPlaylist) {
+    //         debugger;
     //     }
-    // };
+    // });
+    vm.removeSongFromPlaylist = function (song, index) {
+        $timeout(function(){
+            // isDeleting = false;
+            angularPlayer.removeSong(song.id, index);
+            angularPlayer.nextTrack();
+        })
+
+    }
 
 }
 

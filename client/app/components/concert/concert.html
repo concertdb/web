@@ -4,23 +4,10 @@
      flex>
 
     <div flex layout="column">
-
-        <div class="home-content"
-             layout="column" layout-align="center center" >
-            <span ng-if="!vm.searchResults.length">
-                <div class="site-header md-display-1">
-                    Welcome to ConcertDB
-                </div>
-                <img class="homepage-image" src="http://i.imgur.com/5OTRuqD.jpg?1">
-            </span>
-        </div>
-
         <!--concertSearchResults-->
-        <div class="search-results-year-header md-display-1"
-             ng-show="vm.searchResults.length">
+        <div class="search-results-year-header md-display-1">
             {{ vm.currentYear }}
         </div>
-
         <md-list class="search-results" ng-show="vm.searchResults.length" >
             <md-list-item class="md-title concert-search-result-item"
                 ng-repeat="concert in vm.searchResults"
@@ -30,7 +17,6 @@
                 </a>
             </md-list-item>
         </md-list>
-
         <!--/concertSearchResults-->
     </div>
 
