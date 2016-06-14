@@ -6,14 +6,15 @@
     <div flex layout="column">
 
         <div class="home-content"
-             layout="column" layout-align="center center" >
-            <div class="site-header md-display-1">
+             layout="column"
+        layout-align="center center">
+            <div class="site-header md-display-1" layout="row">
                 Welcome to ConcertDB
             </div>
             <img class="homepage-image" src="http://i.imgur.com/5OTRuqD.jpg?1">
         </div>
         <div class="artist-buttons" layout="column">
-            <div layout="row">
+            <div layout="row" layout-xs="column" layout-align="center center">
                 <md-button ui-sref="concert.index({ artist: 'String Cheese Incident', year: '2016' })"
                            ng-click="vm.setArtist('String Cheese Incident', true)">
                     String Cheese Incident
@@ -27,7 +28,7 @@
                     Phil Lesh and Friends
                 </md-button>
             </div>
-            <div layout="row">
+            <div layout="row" layout-xs="column" layout-align="center center">
                 <md-button ui-sref="concert.index({ artist: 'Keller Williams', year: '2016' })"
                            ng-click="vm.setArtist('Keller Williams', true)">
                     Keller Williams
@@ -41,7 +42,7 @@
                     Sound Tribe Sector 9
                 </md-button>
             </div>
-            <div layout="row">
+            <div layout="row" layout-xs="column" layout-align="center center">
                 <md-button ui-sref="concert.index({ artist: 'moe.', year: '2016' })"
                            ng-click="vm.setArtist('moe.', true)">
                     moe.
@@ -55,7 +56,7 @@
                     Disco Biscuits
                 </md-button>
             </div>
-            <div layout="row">
+            <div layout="row" layout-xs="column" layout-align="center center">
                 <md-button ui-sref="concert.index({ artist: 'Perpetual Groove', year: '2016' })"
                            ng-click="vm.setArtist('Perpetual Groove', true)">
                     Perpetual Groove
@@ -70,7 +71,9 @@
                 </md-button>
             </div>
         </div>
-
+        <div class="author" layout="column" layout-align="center center">
+            Designed by Matthew Vilhauer
+        </div>
     </div>
 
 </div>

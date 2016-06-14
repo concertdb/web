@@ -12,20 +12,22 @@
 .secondary-text-color  { color: #727272; }
 .divider-color         { border-color: #B6B6B6; }
 
-
-
-//with a fixed left div, use this
-#header header {
-  width: 270px;
-  /* height: 100%; */
+sidebar {
   position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 9;
-  -ms-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
+  z-index: 101;
 }
-
+navbar {
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+}
+.page-content {
+  padding-top: 60px;
+  padding-bottom: 145px;
+}
+playlist {
+  padding: 5px;
+}
 .player {
   color: #00695C;
   font-size: 11px;
@@ -35,19 +37,6 @@
   width:100%;
   bottom: 0;
 }
-navbar {
-  position: fixed;
-  width: 100%;
-  z-index: 100;
-}
-sidebar {
-  position: fixed;
-  z-index: 101;
-}
-playlist {
-  padding: 5px;
-}
-
 @media (min-width: 960px) {
   .not-sidebar {
     margin-left: 285px;
@@ -55,16 +44,42 @@ playlist {
   .player {
     padding-right: 295px;
   }
-  //.page-content {
-  //  width: 100vw;
-  //  padding-right: 285px;
-  //}
-  //navbar {
-  //  padding-right: 285px;
-  //}
+  .homepage-image {
+    width: 800px;
+    height: auto;
+    margin-top: 20px;
+  }
+}
+@media (min-width: 600px) {
+  .homepage-image {
+    width: 650px;
+    height: auto;
+    margin-top: 20px;
+  }
+}
+@media (max-height: 599px) {
+  .homepage-image {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+  }
+  .site-header {
+    font-size: 30px;
+  }
+  .currently-playing-words {
+    max-width: 50%;
+  }
+
+}
+a.md-button.md-ink-ripple {
+    background-color: #00BFA5;
 }
 
-.page-content {
-  padding-top: 60px;
-  padding-bottom: 145px;
+.artist-buttons {
+  margin-top: 20px;
+}
+.author {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  font-size: 14px;
 }
