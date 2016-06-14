@@ -43,7 +43,10 @@ function concertItemController($log, $rootScope, $scope, $window, $state, $state
                 //pass the returned concert to the parseArchiveOrgConcert method for parsing and caching of the concert and its songs
                 ArchiveOrgService.parseArchiveOrgConcert(concert);
 
-            }, function (error){ 
+                //refresh current state to see results
+                $state.go($state.current, {}, {reload: true});
+
+            }, function (error){
                 $log.error('Error in concertItemController#getConcertFromArchiveOrg: ', error);
             });
     }

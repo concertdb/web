@@ -1,0 +1,76 @@
+<div class="home-page"
+     layout="column"
+     ng-cloak
+     flex>
+
+    <div flex layout="column">
+
+        <div class="home-content"
+             layout="column" layout-align="center center" >
+            <div class="site-header md-display-1">
+                Welcome to ConcertDB
+            </div>
+            <img class="homepage-image" src="http://i.imgur.com/5OTRuqD.jpg?1">
+        </div>
+        <div class="artist-buttons" layout="column">
+            <div layout="row">
+                <md-button ui-sref="concert.index({ artist: 'String Cheese Incident', year: '2016' })"
+                           ng-click="vm.setArtist('String Cheese Incident', true)">
+                    String Cheese Incident
+                </md-button>
+                <md-button ui-sref="concert.index({ artist: 'Grateful Dead', year: '1995' })"
+                           ng-click="vm.setArtist('Grateful Dead', true)">
+                    Grateful Dead
+                </md-button>
+                <md-button ui-sref="concert.index({ artist: 'Phil Lesh and Friends', year: '2016' })"
+                           ng-click="vm.setArtist('Phil Lesh and Friends', true)">
+                    Phil Lesh and Friends
+                </md-button>
+            </div>
+            <div layout="row">
+                <md-button ui-sref="concert.index({ artist: 'Keller Williams', year: '2016' })"
+                           ng-click="vm.setArtist('Keller Williams', true)">
+                    Keller Williams
+                </md-button>
+                <md-button ui-sref="concert.index({ artist: 'Lotus', year: '2016' })"
+                           ng-click="vm.setArtist('Lotus', true)">
+                    Lotus
+                </md-button>
+                <md-button ui-sref="concert.index({ artist: 'Sound Tribe Sector 9', year: '2016' })"
+                           ng-click="vm.setArtist('Sound Tribe Sector 9', true)">
+                    Sound Tribe Sector 9
+                </md-button>
+            </div>
+            <div layout="row">
+                <md-button ui-sref="concert.index({ artist: 'moe.', year: '2016' })"
+                           ng-click="vm.setArtist('moe.', true)">
+                    moe.
+                </md-button>
+                <md-button ui-sref="concert.index({ artist: 'Umphreys McGee', year: '2016' })"
+                           ng-click="vm.setArtist('Umphreys McGee', true)">
+                    Umphreys McGee
+                </md-button>
+                <md-button ui-sref="concert.index({ artist: 'Disco Biscuits', year: '2016' })"
+                           ng-click="vm.setArtist('Disco Biscuits', true)">
+                    Disco Biscuits
+                </md-button>
+            </div>
+            <div layout="row">
+                <md-button ui-sref="concert.index({ artist: 'Perpetual Groove', year: '2016' })"
+                           ng-click="vm.setArtist('Perpetual Groove', true)">
+                    Perpetual Groove
+                </md-button>
+                <md-button ui-sref="concert.index({ artist: 'Ween', year: '2016' })"
+                           ng-click="vm.setArtist('Ween', true)">
+                    Ween
+                </md-button>
+                <md-button ui-sref="concert.index({ artist: 'Schooley Mountain Band', year: '2016' })"
+                           ng-click="vm.setArtist('Schooley Mountain Band', true)">
+                    Schooley Mountain Band
+                </md-button>
+            </div>
+        </div>
+
+    </div>
+
+</div>
