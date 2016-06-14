@@ -1,7 +1,7 @@
 import artistYearChoices from './artistYearChoices';
 import _ from 'lodash';
 
-function SidebarController($rootScope, $log, $mdSidenav, ConcertService, ArchiveOrgService){
+function SidebarController($rootScope, $log, ConcertService, ArchiveOrgService){
     "ngInject";
 
     const vm = this;
@@ -13,8 +13,9 @@ function SidebarController($rootScope, $log, $mdSidenav, ConcertService, Archive
 
         //Hardcoded with band and their years active
         vm.artistYearChoices = artistYearChoices;
+        //set current artist and year choices with defaults
+        setArtistYears(vm.currentArtist);
     }
-    init();
 
     vm.setArtist = function(artist){
         ConcertService.current.artist.name = artist;
@@ -33,8 +34,6 @@ function SidebarController($rootScope, $log, $mdSidenav, ConcertService, Archive
     vm.setYear = function(year){
         ConcertService.current.year.name = year;
         vm.searchForConcert(year);
-        //@todo: get rid of magic string!!!
-        $mdSidenav('leftSideNavbar').toggle();
     };
     vm.showArtistList = function(){
         vm.showArtistChoices = !vm.showArtistChoices;
@@ -62,6 +61,8 @@ function SidebarController($rootScope, $log, $mdSidenav, ConcertService, Archive
             });
     };
 
+    //initialize the component's controller.
+    init();
 }
 
 export default SidebarController;

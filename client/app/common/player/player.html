@@ -1,39 +1,49 @@
 <div class="player"
-     layout="column">
+     layout="column"
+     flex
+     ng-show="showPlayer()">
 
     <sound-manager></sound-manager>
 
-        <div class="seekBase" seek-track>
-            <div class="seekLoad" ng-style="{width : ( progress + '%' ) }"></div>
-        </div>
+    <div class="seekBase" seek-track>
+        <div class="seekLoad" ng-style="{width : ( progress + '%' ) }"></div>
+    </div>
 
-        <div layout="column"
-             class=""currently-playing-info">
-            <span class="player-time" layout="row" layout-align="end center">
-                ({{ currentPostion }} / {{ currentDuration }})
-            </span>
+    <div layout="column"
+         class="currently-playing-info">
+        <span class="player-time" layout="row" layout-align="end center">
+            ({{ currentPostion }} / {{ currentDuration }})
+        </span>
 
-            <div layout="row" layout-align="center top" class="player-buttons">
-                <i class="material-icons play-buttons" prev-track>fast_rewind</i>
-                <!--isPlaying is exposed by soundmanager2 directly on the $scope-->
-                <i class="material-icons play-buttons"
-                   ng-show="!vm.ConcertService.current.isPlaying"
-                   play-music>play_arrow</i>
-                <!--isPlaying is exposed by soundmanager2 directly on the $scope-->
-                <i class="material-icons play-buttons"
-                   ng-show="vm.ConcertService.current.isPlaying"
-                   pause-music>pause</i>
-                <i class="material-icons play-buttons" next-track>fast_forward</i>
+        <div layout="row" layout-align="center center">
+            <div class="currently-playing-words"
+                 layout="column"
+                 layout-xs="row"
+                 layout-align="start center">
+                <div layout="column">
+                    <h1 class="currently-playing">{{vm.ConcertService.current.currentPlaying.title}}</h1>
+                    <h4 class="currently-playing">{{vm.ConcertService.current.currentPlaying.artist}}</h4>
+                    <h4 class="currently-playing">{{vm.ConcertService.current.currentPlaying.album}}</h4>
+                </div>
+            </div>
+
+            <div layout="column"
+                 layout-xs="row">
+                <div layout="row" layout-align="center top" class="player-buttons">
+                    <i class="material-icons play-buttons" prev-track>fast_rewind</i>
+                    <!--isPlaying is exposed by soundmanager2 directly on the $scope-->
+                    <i class="material-icons play-buttons"
+                       ng-show="!vm.ConcertService.current.isPlaying"
+                       play-music>play_arrow</i>
+                    <!--isPlaying is exposed by soundmanager2 directly on the $scope-->
+                    <i class="material-icons play-buttons"
+                       ng-show="vm.ConcertService.current.isPlaying"
+                       pause-music>pause</i>
+                    <i class="material-icons play-buttons" next-track>fast_forward</i>
+                </div>
             </div>
         </div>
-
-        <div class="currently-playing-words"
-             layout="column"
-             layout-align="start center">
-            <h1 class="currently-playing">{{vm.ConcertService.current.currentPlaying.title}}</h1>
-            <h4 class="currently-playing">{{vm.ConcertService.current.currentPlaying.artist}}</h4>
-            <h4 class="currently-playing">{{vm.ConcertService.current.currentPlaying.album}}</h4>
-        </div>
+    </div>
 
 </div>
 
