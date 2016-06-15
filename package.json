@@ -61,7 +61,10 @@
     "test": "karma start",
     "start": "gulp serve",
     "build": "gulp webpack",
-    "smoketest": "gulp webpack && node server.js"
+    "smoketest": "gulp webpack && node server.js",
+    "start:prod": "pm2 start server.js -i max",
+    "stop:prod": "pm2 stop server.js",
+    "reload:prod": "pm2 reload server.js"
   },
   "engines": {
     "node": "5.9.1"
