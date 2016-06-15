@@ -6,7 +6,7 @@ I have a serious passion for live music, and as such, am a frequent visitor to a
 
 ##Setup
 
-I chose to go with Angular 1.5 for my front end for two reasons: Primarily because I knew it would be a challenge. But also because I had some familiarity with it. I went with [(https://github.com/el-besto "el-besto's")] advice on using the NG6 starter kit as a starting point. He made some slight modifications to the config, build, and testing files, as well as setting the default styling files to be LESS. He also walked me through installing Angular Material, Angular's UI framework that is an implemntation of Google's material design specifications. Below is some reference information on the NG6 starter repo that I used as a base.
+I chose to go with Angular 1.5 for my front end for two reasons: Primarily because I knew it would be a challenge. But also because I had some familiarity with it. I went with ["el-besto's" (https://github.com/el-besto )] advice on using the NG6 starter kit as a starting point. He made some slight modifications to the config, build, and testing files, as well as setting the default styling files to be LESS. He also walked me through installing Angular Material, Angular's UI framework that is an implemntation of Google's material design specifications. Below is some reference information on the NG6 starter repo that I used as a base.
 
 
 ### NG6 [![Join Slack](https://img.shields.io/badge/slack-join-brightgreen.svg)](https://angularclass.com/slack-join) [![Join the chat at https://gitter.im/angularclass/NG6-starter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/angularclass/NG6-starter?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
