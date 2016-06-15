@@ -26,10 +26,10 @@ function PlayerController($log, $scope, $window, $stateParams, angularPlayer, Co
 
     //Prevent scrollbar from scrolling down
     $window.onkeydown = function(e) {
-        if (e.keyCode == 32 && e.target == document.body) {
+        if (e.keyCode === 32 && e.target === document.body) {
             e.preventDefault();
         }
-    }
+    };
     // 37- left
     // 39- right
     //Toggle play/pause when the spacebar is pressed
@@ -45,7 +45,7 @@ function PlayerController($log, $scope, $window, $stateParams, angularPlayer, Co
         if ($scope.isPlaying) {
             angularPlayer.pause();
         } else {
-            angularPlayer.play()
+            angularPlayer.play();
         }
     }
 
