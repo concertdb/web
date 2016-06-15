@@ -118,4 +118,10 @@ I recently learned about a framework called Sails JS, and was very intrigued by 
 ##Future Plans
 
 I plan on adding the additional functionality in the coming weeks:
-
+* Allow users to sign up and have a profile
+* Allow users to save playlists
+* Ability to search for artists
+* Ability to search concerts by song
+* Save concerts, songs, playlists, and users to Sails backend
+* Fix player control bugs (Removing and song and next button)
+* Make the URLs pretty by removing the spaces
