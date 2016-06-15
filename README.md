@@ -1,4 +1,4 @@
-Latest Version: [www.matthewvilhauer.com/concertdb]
+Latest Version: www.matthewvilhauer.com/concertdb
 
 #ConcertDB - Web
 
