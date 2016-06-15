@@ -143,6 +143,7 @@ i.project-github-link {
 }
 .about-me-container {
   height: 100%;
+  padding: 0 10% 0 10%;
 }
 .profile-pic {
   border-radius: 100%;
@@ -156,7 +157,8 @@ i.project-github-link {
   padding-top: 20px;
 }
 .about-me-paragraph {
-  padding-top: 20px;
+  font-size: 1.2em;
+  letter-spacing: 1px;
 }
 
 /*Footer*/
