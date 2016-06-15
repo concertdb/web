@@ -135,7 +135,7 @@ i.project-github-link {
   height: 150px;
 }
 .about-me-content {
-  padding: 20px 20px 55px 25px;
+  padding: 20px 20px 55px 20px;
 }
 .profile-pic-container {
   padding-top: 20px;
@@ -195,6 +195,15 @@ footer {
   }
   .about-me-content {
     margin-bottom: 50px;
+  }
+  .home-page-arrow {
+    padding-right: 7px;
+  }
+  #portfolio-section {
+    padding-left: 10px;
+  }
+  #about-me-section {
+    padding-left: 10px;
   }
 
 }
