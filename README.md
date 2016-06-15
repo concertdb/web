@@ -4,7 +4,7 @@ I have a serious passion for live music, and as such, am a frequent visitor to a
 
 
 
-#Setup
+##Setup
 
 I chose to go with Angular 1.5 for my front end for two reasons: Primarily because I knew it would be a challenge. But also because I had some familiarity with it. I went with (https://github.com/el-besto "el-besto's") advice on using the NG6 starter kit as a starting point. He made some slight modifications to the config, build, and testing files, as well as setting the default styling files to be LESS. He also walked me through installing Angular Material, Angular's UI framework that is an implemntation of Google's material design specifications. Below is some reference information on the NG6 starter repo that I used as a base.
 
@@ -62,7 +62,7 @@ client
 ```
 
 
-#Managing Sound
+##Managing Sound
 
 ###Angular soundManager2
 Was able to get the music player component with a full set of buttons and functionality to successfully play music using the Angular SoundManager2 module. 
@@ -72,7 +72,7 @@ Setting up the SoundManager2 module was much more difficult than expected. There
 
 
 
-#Services
+##Services
 
 1. __archiveOrgService__ - gets the concert from the page
 
@@ -87,13 +87,13 @@ What ended u being immensely helpful in overcoming this roadblock was drawing mo
 
 
 
-# Brief Back-end Overview
+## Brief Back-end Overview
 
 I recently learned about a framework called Sails JS, and was very intrigued by its flexible approach to building practical, production ready Node.js apps. It comes with a number of awesome features, like auto-generated rest apis, a very powerful ORM (Waterline), websocket support, and the fact that it is db and front-end agnostic. I built a few demo apps with it, and witnessed firsthand how relatively simple it was to set up RESTful APIs. So I thought it would be fun to use it for my final project. A few days ago I set up models and associations for Concerts, Concert Recordings, Songs, Users, and Playlists. Once I have my front-end fleshed out enough, I will connect it to the back-end to start getting data into the Postgres database.
 
 
 
-#Key Project Takeaways
+##Key Project Takeaways
 
 * angular, angular-material - working with modern framework, and a view extension library based on Google's material design.
 
@@ -115,7 +115,7 @@ I recently learned about a framework called Sails JS, and was very intrigued by 
 * webpack - modern module loader experience, working with es6, traspilation via Babel (largly setup by ng6 starterkit with some help from Angelo). Learned Es6 module syntax and practiced writting code in smaller self-contained pieces.
 
 
-#Future Plans
+##Future Plans
 
 I plan on adding the additional functionality in the coming weeks:
 
