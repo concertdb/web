@@ -139,7 +139,10 @@ i.project-github-link {
 }
 .profile-pic-container {
   padding-top: 50px;
-  padding-bottom: 70px;
+  padding-bottom: 80px;
+}
+.about-me-paragraph {
+  padding-top: 30px;
 }
 
 /*Footer*/
@@ -181,11 +184,11 @@ footer {
     padding-left: 10px;
   }
   .my-title {
-    font-size: 24px;
+    font-size: 28px;
     margin-top: -80px;
   }
   .my-tag {
-    font-size: 20px;
+    font-size: 24px;
     margin-top: -80px;
     padding: 20px;
   }
