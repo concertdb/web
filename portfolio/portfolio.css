@@ -1,1 +1,203 @@
+/*Global*/
 
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+.dark-primary-color    { background: #303F9F; }
+.default-primary-color { background: #3F51B5; }
+.light-primary-color   { background: #C5CAE9; }
+.text-primary-color    { color: #FFFFFF; }
+.accent-color          { background: #FF5722; }
+.primary-text-color    { color: #212121; }
+.secondary-text-color  { color: #727272; }
+.divider-color         { border-color: #B6B6B6; }
+
+@font-face {
+  font-family: SIMPLIFICA;
+  src: local("SIMPLIFICA"),
+  local("SIMPLIFICA"),
+  url('./SIMPLIFICA_Typeface.ttf');
+  font-weight: bold;
+}
+
+body {
+  font-family: "SIMPLIFICA";
+  font-stretch: expanded;
+  background-color: #FFFFFF;
+}
+main {
+  background-color: #FFFFFF;
+}
+p {
+  letter-spacing: 1px;
+  margin-bottom: 0px;
+}
+md-button {
+  font-size: 40px;
+}
+/*Toolbar*/
+
+header {
+  background-color: #3F51B5;
+}
+.md-toolbar-tools {
+  height: 50px;
+  z-index: 10;
+  position: fixed;
+  width:100%;
+  top: 0;
+  background-color: #303F9F;
+}
+.menu-link {
+  text-decoration: none;
+  font-size: 50px;
+}
+.logo:hover {
+  color: #FFFFFF;
+}
+
+
+/*Name and Title*/
+
+.my-name-container {
+  font-weight: bold;
+  height: 100vh;
+  color: #FFFFFF;
+}
+.my-name {
+  padding-bottom: 50px;
+  letter-spacing: 3px;
+}
+.my-title {
+  padding-bottom: 100px;
+  letter-spacing: 3px;
+  font-size: 60px;
+}
+.my-tag {
+  margin-top: -75px;
+  font-size: 35px;
+  padding-bottom: 50px;
+}
+.home-page-arrow {
+  color: #FFFFFF;
+  font-size: 40px;
+}
+a[ id= "down-arrow" ]:target ~ #portfolio div.portfolio-header {
+    -webkit-transform: translateY( -1000px );
+    transform: translateY( -1000px );
+}
+
+
+/*Projects*/
+
+.portfolio-header {
+  padding-top: 60px;
+  padding-bottom: 20px;
+}
+.project-title {
+  color: #303F9F;
+  font-weight: bolder;
+}
+img {
+    max-width:100%;
+    height: 200px;
+}
+i.project-github-link {
+  color: #FF5722;
+}
+.project-content {
+  margin-top: -20px;
+}
+.project-description {
+  letter-spacing: 1px;
+  font-size: 20px;
+  font-spacing: .15em;
+}
+.project-github-link {
+  margin-left: 10px;
+}
+
+
+/*About Me*/
+#about-me-section {
+  height: 100vh;
+}
+
+.about-me-header {
+  padding-top: 60px;
+}
+.about-me-container {
+  height: 100vh;
+}
+.profile-pic {
+  border-radius: 100%;
+  width: 150px;
+  height: 150px;
+}
+.about-me-content {
+  padding: 20px 20px 300px 20px;
+}
+.profile-pic-container {
+  padding-top: 50px;
+  padding-bottom: 70px;
+}
+
+/*Footer*/
+
+footer {
+  color: #FFFFFF;
+  /*background-color: #B6B6B6;*/
+  padding: 5px 0 15px 0;
+  z-index: 100;
+  position: fixed;
+  width:100%;
+  bottom: 0;
+}
+.social-media-icon {
+  font-size: 26px;
+  padding: 15px 0 20px 0;
+}
+.social-media-icons {
+  font-size: 26px;
+  padding-right: 10px;
+}
+.md-button.md-primary.md-fab {
+  background-color: #FF5722;
+}
+
+
+
+/* Media Queries*/
+
+@media (max-height: 599px) {
+
+  .my-name-container {
+    margin-top: -100px;
+    margin-bottom: 100px;
+  }
+
+  .my-name {
+    font-size: 50px;
+    padding-left: 10px;
+  }
+  .my-title {
+    font-size: 24px;
+    margin-top: -80px;
+  }
+  .my-tag {
+    margin-top: -80px;
+    padding: 20px;
+  }
+  .social-media-icons {
+    padding-right: 0px;
+  }
+  .about-me-content {
+    margin-bottom: 50px;
+  }
+  .profile-pic-container {
+    padding-top: 60px;
+    padding-bottom: 120px;
+  }
+
+}
