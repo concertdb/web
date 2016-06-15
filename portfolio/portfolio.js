@@ -13,7 +13,7 @@ angular.module('portfolio')
             title: 'ConcertDB',
             image: 'http://i.imgur.com/Ypl3MSb.jpg',
             githublink: 'https://github.com/concertdb/web',
-            description: 'ConcertDB is my true passion project. It allows you to stream audio recordings of concerts from Archive.org and make custom playlists of songs from different concerts.',
+            description: 'ConcertDB is a true passion project. It allows you to stream audio recordings of concerts from Archive.org and make custom playlists of songs from different concerts.',
             technologies: 'Node, Express, Angular, Angular-material, ES6, NG6-Starter-kit, PouchDB, Webpack, Babel, 3rd Party APIs, Component-driven Architecture'
         },
         {
@@ -25,9 +25,9 @@ angular.module('portfolio')
         },
         {
             title: 'Concert Tracker',
-            image: 'http://i.imgur.com/pBom9UI.jpg',
+            image: 'http://i.imgur.com/Fo9di1V.jpg',
             githublink: 'https://github.com/matthewvilhauer/concert-tracker',
-            description: 'My first attempt at building a web app from the ground up. Concert Tracker allows you to create and save lists of your favorite concerts, with the ability to show Archive.org\'s media player if a correct link is provided.',
+            description: 'My first attempt at building a web app from the ground up. Concert Tracker allows you to create and save lists of your favorite concerts.',
             technologies: 'Node, Express, MongoDB, Handlebars, JQuery'
         }
     ];
