@@ -52,6 +52,9 @@ header {
   text-decoration: none;
   font-size: 50px;
 }
+.logo {
+  color: #FFFFFF;
+}
 .logo:hover {
   color: #FFFFFF;
 }
@@ -94,9 +97,20 @@ a[ id= "down-arrow" ]:target ~ #portfolio div.portfolio-header {
   padding-top: 60px;
   padding-bottom: 20px;
 }
-.project-title {
+.project-title-container {
   color: #303F9F;
   font-weight: bolder;
+}
+.project-title {
+  color: #303F9F;
+  text-decoration: none;
+}
+
+a:not(.md-button) {
+    color: #303F9F;
+}
+a:not(.md-button):hover {
+    color: #FF5722;
 }
 img {
     max-width:100%;
@@ -116,6 +130,7 @@ i.project-github-link {
 .project-github-link {
   margin-left: 10px;
 }
+
 
 
 /*About Me*/
