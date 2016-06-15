@@ -120,14 +120,14 @@ i.project-github-link {
 
 /*About Me*/
 #about-me-section {
-  height: 100vh;
+  height: 100%;
 }
 
 .about-me-header {
   padding-top: 60px;
 }
 .about-me-container {
-  height: 100vh;
+  height: 100%;
 }
 .profile-pic {
   border-radius: 100%;
@@ -135,14 +135,13 @@ i.project-github-link {
   height: 150px;
 }
 .about-me-content {
-  padding: 20px 20px 300px 20px;
+  padding: 20px 20px 40px 25px;
 }
 .profile-pic-container {
-  padding-top: 50px;
-  padding-bottom: 80px;
+  padding-top: 20px;
 }
 .about-me-paragraph {
-  padding-top: 30px;
+  padding-top: 20px;
 }
 
 /*Footer*/
@@ -178,7 +177,6 @@ footer {
     margin-top: -100px;
     margin-bottom: 100px;
   }
-
   .my-name {
     font-size: 50px;
     padding-left: 10px;
@@ -197,10 +195,6 @@ footer {
   }
   .about-me-content {
     margin-bottom: 50px;
-  }
-  .profile-pic-container {
-    padding-top: 60px;
-    padding-bottom: 120px;
   }
 
 }
