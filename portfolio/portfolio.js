@@ -22,7 +22,7 @@ angular.module('portfolio')
             image: 'http://i.imgur.com/26nsA7U.jpg',
             sitelink: 'https://travel-nomad.herokuapp.com/',
             githublink: 'https://github.com/WDI28-Nomad/nomad',
-            description: 'Nomad is a budgeting app that allows you to estimate your expenses for upcoming trips.',
+            description: 'Nomad is a budgeting app that allows you to estimate your expenses for upcoming trips. This was a group project. My primary contribution to this project was building the interactive budget graph.',
             technologies: 'Ruby on Rails, PostgreSQL, Active Record, HTML/CSS, Rspec, JQuery, Highcharts, Google Maps API, Carrierwave, HTTParty'
         },
         {
@@ -41,24 +41,5 @@ angular.module('portfolio')
       originatorEv = ev;
       $mdOpenMenu(ev);
     };
-    // this.notificationsEnabled = true;
-    // this.toggleNotifications = function() {
-    //   this.notificationsEnabled = !this.notificationsEnabled;
-    // };
-    // this.redial = function() {
-    //   $mdDialog.show(
-    //     $mdDialog.alert()
-    //       .targetEvent(originatorEv)
-    //       .clickOutsideToClose(true)
-    //       .parent('body')
-    //       .title('Suddenly, a redial')
-    //       .textContent('You just called a friend; who told you the most amazing story. Have a cookie!')
-    //       .ok('That was easy')
-    //   );
-    //   originatorEv = null;
-    // };
-    // this.checkVoicemail = function() {
-    //   // This never happens.
-    // };
 
 });
