@@ -13,7 +13,7 @@ angular.module('portfolio')
             title: 'San Franpsycho',
             image: '/portfolio/images/sanfranpsycho.png',
             sitelink: 'http://sanfranpsycho.com',
-            description: 'Ecommerce apparel store. Helped to customize their theme.',
+            description: 'Ecommerce store for local screen printing and apparel company. Recently did some freelance work to help redesign their theme.',
             technologies: 'Bigcommerce, HTML, CSS, Javascript, YAML'
         },
         {
