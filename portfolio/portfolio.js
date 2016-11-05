@@ -10,6 +10,21 @@ angular.module('portfolio')
 
     $scope.portfolio = [
         {
+            title: 'San Franpsycho',
+            image: '/portfolio/images/sanfranpsycho.png',
+            sitelink: 'http://sanfranpsycho.com',
+            description: 'Ecommerce apparel store. Helped to customize their theme.',
+            technologies: 'Bigcommerce, HTML, CSS, Javascript, YAML'
+        },
+        {
+            title: 'CSV ag-Grid',
+            image: '/portfolio/images/csvaggrid.png',
+            sitelink: 'https://github.com/matthewvilhauer/csv-ag-grid',
+            githublink: 'https://github.com/matthewvilhauer/csv-ag-grid',
+            description: 'An app that allows you to upload a csv and edit, transform, filter, and download the results using ag-Grid. Data is visualized using Highcharts\' scatter plot function.',
+            technologies: 'Javascript, JQuery, JQuery UI, ag-Grid, Highcharts, pouchDB'
+        },
+        {
             title: 'ConcertDB',
             image: 'http://i.imgur.com/Ypl3MSb.jpg',
             sitelink: 'http://matthewvilhauer.com/concertdb',
