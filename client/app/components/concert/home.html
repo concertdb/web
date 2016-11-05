@@ -29,10 +29,20 @@
                 </md-button>
             </div>
             <div layout="row" layout-xs="column" layout-align="center center">
+                <md-button ui-sref="concert.index({ artist: 'Ratdog', year: '2014' })"
+                           ng-click="vm.setArtist('Ratdog', true)">
+                    Ratdog
+                </md-button>
                 <md-button ui-sref="concert.index({ artist: 'Keller Williams', year: '2016' })"
                            ng-click="vm.setArtist('Keller Williams', true)">
                     Keller Williams
                 </md-button>
+                <md-button ui-sref="concert.index({ artist: 'Yonder Mountain String Band', year: '2016' })"
+                           ng-click="vm.setArtist('Yonder Mountain String Band', true)">
+                    Yonder Mountain String Band
+                </md-button>
+            </div>
+            <div layout="row" layout-xs="column" layout-align="center center">
                 <md-button ui-sref="concert.index({ artist: 'Lotus', year: '2016' })"
                            ng-click="vm.setArtist('Lotus', true)">
                     Lotus
@@ -40,6 +50,10 @@
                 <md-button ui-sref="concert.index({ artist: 'Sound Tribe Sector 9', year: '2016' })"
                            ng-click="vm.setArtist('Sound Tribe Sector 9', true)">
                     Sound Tribe Sector 9
+                </md-button>
+                <md-button ui-sref="concert.index({ artist: 'Particle', year: '2016' })"
+                           ng-click="vm.setArtist('Particle', true)">
+                    Particle
                 </md-button>
             </div>
             <div layout="row" layout-xs="column" layout-align="center center">
@@ -72,7 +86,7 @@
             </div>
         </div>
         <div class="author" layout="column" layout-align="center center">
-            Designed by Matthew Vilhauer
+            Designed by <a href="/">Matthew Vilhauer</a>
         </div>
     </div>
 
