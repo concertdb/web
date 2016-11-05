@@ -19,7 +19,7 @@ angular.module('portfolio')
         {
             title: 'CSV ag-Grid',
             image: '/portfolio/images/csvaggrid.png',
-            sitelink: 'https://github.com/matthewvilhauer/csv-ag-grid',
+            sitelink: 'https://matthewvilhauer.github.io/csv-ag-grid/',
             githublink: 'https://github.com/matthewvilhauer/csv-ag-grid',
             description: 'An app that allows you to upload a csv and edit, transform, filter, and download the results using ag-Grid. Data is visualized using Highcharts\' scatter plot function.',
             technologies: 'Javascript, JQuery, JQuery UI, ag-Grid, Highcharts, pouchDB'
