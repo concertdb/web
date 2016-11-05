@@ -26,7 +26,7 @@ angular.module('portfolio')
         },
         {
             title: 'ConcertDB',
-            image: 'http://i.imgur.com/Ypl3MSb.jpg',
+            image: '/portfolio/images/concertdb.png',
             sitelink: 'http://matthewvilhauer.com/concertdb',
             githublink: 'https://github.com/concertdb/web',
             description: 'ConcertDB is my true passion project. It allows you to stream audio recordings of concerts from Archive.org and make custom playlists of songs from different concerts.',
@@ -34,7 +34,7 @@ angular.module('portfolio')
         },
         {
             title: 'Nomad',
-            image: 'http://i.imgur.com/26nsA7U.jpg',
+            image: '/portfolio/images/nomad.png',
             sitelink: 'https://travel-nomad.herokuapp.com/',
             githublink: 'https://github.com/WDI28-Nomad/nomad',
             description: 'Nomad is a budgeting app that allows you to estimate your expenses for upcoming trips. This was a group project. My primary contribution to this project was building the interactive budget graph.',
@@ -42,7 +42,7 @@ angular.module('portfolio')
         },
         {
             title: 'Concert Tracker',
-            image: 'http://i.imgur.com/Fo9di1V.jpg',
+            image: '/portfolio/images/concert-tracker.png',
             sitelink: 'https://github.com/matthewvilhauer/concert-tracker',
             githublink: 'https://github.com/matthewvilhauer/concert-tracker',
             description: 'My first attempt at building a web app from the ground up. Concert Tracker allows you to create and save lists of your favorite concerts.',
