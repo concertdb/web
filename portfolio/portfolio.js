@@ -38,7 +38,7 @@ angular.module('portfolio')
             sitelink: 'https://travel-nomad.herokuapp.com/',
             githublink: 'https://github.com/WDI28-Nomad/nomad',
             description: 'Nomad is a budgeting app that allows you to estimate your expenses for upcoming trips. This was a group project. My primary contribution to this project was building the interactive budget graph.',
-            technologies: 'Ruby on Rails, PostgreSQL, Active Record, HTML/CSS, Rspec, JQuery, Highcharts, Google Maps API, Carrierwave, HTTParty'
+            technologies: 'Ruby on Rails, PostgreSQL, Active Record, HTML/CSS, Rspec, JQuery, Highcharts, Google Maps API'
         },
         {
             title: 'Concert Tracker',
@@ -47,6 +47,20 @@ angular.module('portfolio')
             githublink: 'https://github.com/matthewvilhauer/concert-tracker',
             description: 'My first attempt at building a web app from the ground up. Concert Tracker allows you to create and save lists of your favorite concerts.',
             technologies: 'Node, Express, MongoDB, Handlebars, JQuery'
+        },
+        {
+            title: 'AcademyNet',
+            image: '/portfolio/images/academynet.png',
+            sitelink: 'http://academynet.com',
+            description: 'Helped develop an integration between HMA\'s digital content platform, marketing system, and CRM.',
+            technologies: 'Drupal, Eloqua, PHP, Groovy'
+        },
+        {
+            title: 'The Dog Stay',
+            image: '/portfolio/images/thedogstay.png',
+            sitelink: 'http://thedogstay.com',
+            description: 'Wordpress site built for a family operated dog care facility in Silver Spring Maryland.',
+            technologies: 'Wordpress, HTML, CSS'
         }
     ];
 
