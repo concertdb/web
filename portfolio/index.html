@@ -65,7 +65,7 @@
                         Web Developer
                     </div>
                     <div class="my-tag md-title">
-                        Focused on simple, elegant solutions
+                         with a passion for systems design
                     </div>
                     <a href="#portfolio" id="down-arrow">
                         <md-icon class="material-icons home-page-arrow">keyboard_arrow_down</md-icon>
@@ -89,11 +89,11 @@
                      layout-align="start center"
                      ng-repeat="project in portfolio track by $index" ng-cloak>
 
-                    <main class="project-content" flex-md="70" flex-order-gt-sm="2">
+                    <main class="project-content" flex-md="70" flex-order-gt-sm="2" layout-align="start center">
                         <strong>
                             <div class="project-title-container md-display-1">
                                 <a href='{{ project.sitelink }}' target="_blank" class="project-title"><span>{{ project.title }}</span></a>
-                                <a href='{{ project.githublink }}' target="_blank"><i class="social-media-icon project-github-link fa fa-github" aria-hidden="true"></i></a>
+                                <a href='{{ project.githublink }}' target="_blank" ng-if="project.githublink"><i class="social-media-icon project-github-link fa fa-github" aria-hidden="true"></i></a>
                             </div>
                         </strong>
 
@@ -106,7 +106,7 @@
                     </main>
 
                     <aside flex-md="30" flex-order-gt-sm="1">
-                        <img ng-src="{{ project.image }}" />
+                        <img class="project-image" ng-src="{{ project.image }}" />
                     </aside>
                 </div>
 
@@ -132,22 +132,28 @@
                             I was born and raised in Washington DC. I attended UVA from 2007-2011 and obtained a B.S. in Systems & Information Engineering.
                             After college I went to work for The Health Management Academy, an executive-focused health care consulting company based in
                             Alexandria, VA. My career there began as a research analyst, working mostly on compiling and analyzing our company's survey data.
-                            Due to my growing interest in web development, I gradually began helping our IT Department with major projects, including the
-                            implementation of our company's first CRM system and delivering The Health Management Academy Meeting App. Not long after that
-                            I decided I wanted to dive full on into the world of IT, and accepted a promotion to be the IT Systems Manager.
+                            Over time I worked on a number of technology projects, including implementing the company’s first CRM and mobile application.
+                            I was also part of a two-man team that in two months’ time was able to stand up a Wordpress app that was used by top executives
+                            of the largest health systems in the country. Our team saved the company an estimated $85k by taking on the full implementation work,
+                            and by using open source technology to build our platform. I eventually was promoted to be the IT Systems Manager, and was the primary
+                            admin for all of our company’s SaaS platforms, including our Oracle CRM and Eloqua marketing platform.
                         </p>
                         <p class="md-body-2 about-me-paragraph">
                             Wanting to improve my technical prowess, I decided to attend General Assembly's part-time Back End Web Development course
-                            at their DC campus. It gave me a taste of what it is like to develop a web application from the ground up. Coming from a
-                            business world where all of the company's applications were SaaS that we purchased, I loved finally being able to have
+                            at their DC campus. It gave me a taste of what it is like to develop a web application from the ground up. I loved being able to have
                             control over all aspects of an application, from the layouts and UI to the routing and database relationships.
                         </p>
                         <p class="md-body-2 about-me-paragraph">
-                            This past spring, I decided to follow my passion for programming out to San Francisco to spend 3 months participating in General
-                            Assembly's Web Development Immersive. During this time, I have added a number of new skills to my toolbelt, but in particular
-                            fell in love with the MEAN stack and using Javascript on both the front and back end. With the recent arrival of ES6 and the rise
-                            in popularity of new MVC frameworks for Node like Sails JS, it makes me very excited to be a Javascript developer in this day
-                            and age. I'm excited to continue learning as I search for jobs that will test my skills and push me to become the best programmer I can be.
+                            This exposure to app development ignited a real spark of interest in me, and after about a year of self-taught and on-the-job training,
+                            I moved out to San Francisco to enroll in a 12-week Web Development Immersive program at General Assembly, where I strengthened my
+                            programming skills by learning how to use the latest web development frameworks and tools in the industry. I have a particular interest
+                            in front-end Javascript frameworks like Angular and React, working on real-time data problems, and doing data modeling and visualization.
+                            My most recent web application is called ConcertDB, where users can stream concert recordings from Archive.org and create a custom
+                            playlist of songs from their library of music. This was developed using Node, Angular, LESS, and PouchDb.  I'm excited to continue
+                            learning as I search for jobs that will test my skills and push me to become the best programmer I can be.
+                        </p>
+                        <p class="md-body-2 about-me-paragraph">
+                            In my free time I love to hike, see live music, and tinker with Arduino kits and my 3D printer.
                         </p>
                     </div>
 
