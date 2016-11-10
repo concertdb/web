@@ -13,15 +13,16 @@ angular.module('portfolio')
             title: 'San Franpsycho',
             image: '/portfolio/images/sanfranpsycho.png',
             sitelink: 'http://sanfranpsycho.com',
-            description: 'Ecommerce store for local screen printing and apparel company. Recently did some freelance work to help redesign their theme.',
-            technologies: 'Bigcommerce, HTML, CSS, Javascript, YAML'
+            githublink: '',
+            description: 'Customized the design of an Ecommerce store for local screen printing and apparel company.',
+            technologies: 'Bigcommerce, HTML/CSS, Javascript'
         },
         {
             title: 'CSV ag-Grid',
             image: '/portfolio/images/csvaggrid.png',
             sitelink: 'https://matthewvilhauer.github.io/csv-ag-grid/',
             githublink: 'https://github.com/matthewvilhauer/csv-ag-grid',
-            description: 'An app that allows you to upload a csv and edit, transform, filter, and download the results using ag-Grid. Data is visualized using Highcharts\' scatter plot function.',
+            description: 'An app that allows you to upload a CSV the  edit, transform, filter, and download the results using ag-Grid. Data is visualized using Highcharts\' scatter plot function.',
             technologies: 'Javascript, JQuery, JQuery UI, ag-Grid, Highcharts, pouchDB'
         },
         {
@@ -29,8 +30,8 @@ angular.module('portfolio')
             image: '/portfolio/images/concertdb.png',
             sitelink: 'http://matthewvilhauer.com/concertdb',
             githublink: 'https://github.com/concertdb/web',
-            description: 'ConcertDB is my true passion project. It allows you to stream audio recordings of concerts from Archive.org and make custom playlists of songs from different concerts.',
-            technologies: 'Node, Express, Angular, Angular-material, ES6, NG6-Starter-kit, PouchDB, Webpack, Babel, 3rd Party APIs, Component-driven Architecture'
+            description: 'ConcertDB is my true passion project. It allows you to stream audio recordings of concerts from Archive.org and make a custom playlist of songs from different concerts.',
+            technologies: 'Node, Express, Angular, Angular-material, ES6, NG6-Starter-kit, PouchDB, Webpack, Babel'
         },
         {
             title: 'Nomad',
@@ -52,18 +53,27 @@ angular.module('portfolio')
             title: 'AcademyNet',
             image: '/portfolio/images/academynet.png',
             sitelink: 'http://academynet.com',
-            description: 'Helped develop an integration between HMA\'s digital content platform, marketing system, and CRM.',
+            githublink: '',
+            description: 'Technical lead that developed the data integration between HMA\'s digital content platform, marketing system, and CRM.',
             technologies: 'Drupal, Eloqua, PHP, Groovy'
+        },
+        {
+            title: 'The Health Management Academy App',
+            image: '/portfolio/images/hma-app.png',
+            sitelink: 'https://itunes.apple.com/us/app/health-management-academy/id705696985?mt=8',
+            githublink: '',
+            description: 'Helped design the layout and content upload workflow for HMA\'s mobile app.',
+            technologies: 'QuickMobile, HTML/CSS, Excel'
         },
         {
             title: 'The Dog Stay',
             image: '/portfolio/images/thedogstay.png',
             sitelink: 'http://thedogstay.com',
+            githublink: '',
             description: 'Wordpress site built for a family operated dog care facility in Silver Spring Maryland.',
-            technologies: 'Wordpress, HTML, CSS'
+            technologies: 'Wordpress, HTML/CSS'
         }
     ];
-
 
     var originatorEv;
     this.openMenu = function($mdOpenMenu, ev) {
