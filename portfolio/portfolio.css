@@ -30,7 +30,7 @@ main {
   background-color: #FFFFFF;
 }
 p {
-  letter-spacing: 1px;
+  letter-spacing: 1.2em;
 }
 md-button {
   font-size: 40px;
@@ -53,9 +53,6 @@ header {
   font-size: 50px;
 }
 .logo {
-  color: #FFFFFF;
-}
-.logo:hover {
   color: #FFFFFF;
 }
 
@@ -118,6 +115,10 @@ img {
 i.project-github-link {
   color: #FF5722;
 }
+.md-button.md-default-theme.md-primary.md-raised:not([disabled]):hover, .md-button.md-primary.md-raised:not([disabled]):hover, .md-button.md-default-theme.md-primary.md-fab:not([disabled]):hover, .md-button.md-primary.md-fab:not([disabled]):hover {
+  color: #FF5722;
+  background-color: #FFFFFF;
+}
 .project-content {
   margin-top: -20px;
 }
@@ -159,7 +160,7 @@ i.project-github-link {
 }
 .about-me-paragraph {
   font-size: 1.2em;
-  letter-spacing: 1.5px;
+  letter-spacing: 1.2px;
   line-height: 1.4em;
 }
 

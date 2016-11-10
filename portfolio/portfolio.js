@@ -15,7 +15,7 @@ angular.module('portfolio')
             sitelink: 'http://sanfranpsycho.com',
             githublink: '',
             description: 'Customized the design of an Ecommerce store for local screen printing and apparel company.',
-            technologies: 'Bigcommerce, HTML/CSS, Javascript'
+            technologies: 'Bigcommerce, Javascript, HTML/CSS'
         },
         {
             title: 'CSV ag-Grid',
@@ -23,7 +23,7 @@ angular.module('portfolio')
             sitelink: 'https://matthewvilhauer.github.io/csv-ag-grid/',
             githublink: 'https://github.com/matthewvilhauer/csv-ag-grid',
             description: 'An app that allows you to upload a CSV the  edit, transform, filter, and download the results using ag-Grid. Data is visualized using Highcharts\' scatter plot function.',
-            technologies: 'Javascript, JQuery, JQuery UI, ag-Grid, Highcharts, pouchDB'
+            technologies: 'Javascript, JQuery, JQuery UI, ag-Grid, Highcharts, pouchDB, HTML/CSS'
         },
         {
             title: 'ConcertDB',
@@ -31,7 +31,7 @@ angular.module('portfolio')
             sitelink: 'http://matthewvilhauer.com/concertdb',
             githublink: 'https://github.com/concertdb/web',
             description: 'ConcertDB is my true passion project. It allows you to stream audio recordings of concerts from Archive.org and make a custom playlist of songs from different concerts.',
-            technologies: 'Node, Express, Angular, Angular-material, ES6, NG6-Starter-kit, PouchDB, Webpack, Babel'
+            technologies: 'Node, Express, Angular, Angular-material, ES6, NG6-Starter-kit, PouchDB, Webpack, Babel, HTML/CSS'
         },
         {
             title: 'Nomad',
@@ -39,7 +39,7 @@ angular.module('portfolio')
             sitelink: 'https://travel-nomad.herokuapp.com/',
             githublink: 'https://github.com/WDI28-Nomad/nomad',
             description: 'Nomad is a budgeting app that allows you to estimate your expenses for upcoming trips. This was a group project. My primary contribution to this project was building the interactive budget graph.',
-            technologies: 'Ruby on Rails, PostgreSQL, Active Record, HTML/CSS, Rspec, JQuery, Highcharts, Google Maps API'
+            technologies: 'Ruby on Rails, PostgreSQL, Active Record, Rspec, JQuery, Highcharts, Google Maps API, HTML/CSS,'
         },
         {
             title: 'Concert Tracker',
@@ -47,7 +47,7 @@ angular.module('portfolio')
             sitelink: 'https://github.com/matthewvilhauer/concert-tracker',
             githublink: 'https://github.com/matthewvilhauer/concert-tracker',
             description: 'My first attempt at building a web app from the ground up. Concert Tracker allows you to create and save lists of your favorite concerts.',
-            technologies: 'Node, Express, MongoDB, Handlebars, JQuery'
+            technologies: 'Node, Express, MongoDB, Handlebars, JQuery, HTML/CSS'
         },
         {
             title: 'AcademyNet',
@@ -55,7 +55,7 @@ angular.module('portfolio')
             sitelink: 'http://academynet.com',
             githublink: '',
             description: 'Technical lead that developed the data integration between HMA\'s digital content platform, marketing system, and CRM.',
-            technologies: 'Drupal, Eloqua, PHP, Groovy'
+            technologies: 'Drupal, Eloqua, Oracle Sales Cloud, PHP, Groovy'
         },
         {
             title: 'The Health Management Academy App',
