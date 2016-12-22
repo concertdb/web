@@ -13,10 +13,8 @@ app.use('/portfolio', portfolioPublicPath);
 app.get('/portfolio',function (_, res) { res.sendFile(portfolioIndexPath); });
 
 //Setup Example File
-const exampleIndexPath = path.join(__dirname, '/portfolio/example/example.csv');
-const examplePublicPath = express.static(path.join(__dirname, '/portfolio/example'));
-app.use('/portfolio/example', examplePublicPath);
-app.get('/portfolio/example',function (_, res) { res.sendFile(exampleIndexPath); });
+const exampleCsvPath = path.join(__dirname, '/portfolio/example/example.csv');
+app.use('/example', exampleCsvPath);
 
 //Setup ConcertDb
 const concertDbIndexPath = path.join(__dirname, '/public/index.html');
